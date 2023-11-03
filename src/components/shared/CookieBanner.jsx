@@ -6,7 +6,6 @@ import { useCookies } from "react-cookie";
 
 const CookieBanner = () => {
   const location = useLocation()
-  initializeAndTrack(location)
 
   const [showCookieBanner, setShowCookieBanner] = useState(true)
   const [showSettings, setShowSettings] = useState(false)
@@ -25,11 +24,13 @@ const CookieBanner = () => {
       removeCookie("gatsby-gdpr-google-analytics", true)
       removeCookie("gatsby-gdpr-google-tagmanager", true)
     }
+    initializeAndTrack(location);
     setCookie("accepted", true);
     setShowCookieBanner(!showCookieBanner)
   }
 
   const saveAllCookies = () => {
+    initializeAndTrack(location);
     setCookie("gatsby-gdpr-google-analytics", true)
     setCookie("gatsby-gdpr-google-tagmanager", true)
     setCookie("accepted", true);

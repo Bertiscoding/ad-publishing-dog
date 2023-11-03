@@ -25,9 +25,11 @@ h2 {
   width: 100vw;
   height: 40px;
   display: flex;
+  justify-content: center;
   align-items: center;
   position: fixed;
   z-index: 3;
+  padding: 0 15px;
 }
 
 .nav-wrapper {
@@ -38,15 +40,18 @@ h2 {
   align-items: center;
 }
 
-.nav-logo,
 .nav-menu {
   height: 25px;
   width: auto;
 }
 
-.nav-logo img,
-.nav-menu img {
-  height: 25px;
+.nav-logo{
+  height: 30px;
+}
+
+.nav-menu img,
+.nav-logo img  {
+  height: 100%;
   width: auto;
 }
 
@@ -58,7 +63,7 @@ h2 {
   list-style: none;
   top: -110%;
   left: 0;
-  align-items: flex-end;
+  align-items: center;
   padding: 10px 20px 20px 0;
   width: 100%;
   height: auto;

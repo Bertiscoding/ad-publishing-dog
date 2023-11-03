@@ -12,6 +12,7 @@ const HomePage = () => {
         edges {
           node {
             frontmatter {
+              id
               slug
               linkText
               featuredImage {
@@ -78,18 +79,18 @@ const HomePage = () => {
   // Map over posts data
   const mapItems = data.posts.edges.map((item, i) => {
     const { slug, linkText, featuredImage } = item.node.frontmatter
-    return (
-      <a href={slug} key={i} style={itemLinkStyle}>
-        <div>
-          <img
-            src={featuredImage.publicURL}
-            alt={`easy dog training ${linkText}`}
-            style={itemImgStyle}
-          />
-        </div>
-        <h4 style={linkTextStyle}>{linkText}</h4>
-      </a>
-    )
+        return (
+          <a href={slug} key={i} style={itemLinkStyle}>
+            <div>
+              <img
+                src={featuredImage.publicURL}
+                alt={`easy dog training ${linkText}`}
+                style={itemImgStyle}
+              />
+            </div>
+            <h4 style={linkTextStyle}>{linkText}</h4>
+          </a>
+        )
   })
 
   return (

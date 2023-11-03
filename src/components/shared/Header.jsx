@@ -1,7 +1,6 @@
 import React from "react"
 import { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 import classNames from "classnames"
 
 export default function Header() {
@@ -37,15 +36,15 @@ export default function Header() {
   return (
     <>
       <nav className="nav">
-        <div className="nav-wrapper container">
+        <div className="nav-wrapper">
         <a href="/" className="nav-logo">
-          <StaticImage
-            src="src/images/edt-logo-sm.png"
+          <img
+            src="images/edt-logo-sm.png"
             alt="easy dog training logo"
             width={25}
           />
         </a>
-        <ul className={classNames("nav-menu", isNavOpen ? "active" : "")}>{mapLinks}</ul>
+          <ul className={classNames("nav-menu", isNavOpen ? "active" : "")}>{mapLinks}</ul>
         <div className={classNames("hamburger", isNavOpen ? "active" : "")} onClick={toggleNav}>
           <span className="bar"></span>
           <span className="bar"></span>

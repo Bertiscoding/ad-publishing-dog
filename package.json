@@ -16,16 +16,20 @@
   },
   "dependencies": {
     "@mdx-js/react": "^3.0.0",
+    "classnames": "^2.3.2",
     "gatsby": "^5.12.4",
+    "gatsby-plugin-gdpr-cookies": "^2.0.9",
     "gatsby-plugin-image": "^3.12.3",
     "gatsby-plugin-manifest": "^5.12.3",
     "gatsby-plugin-mdx": "^5.12.3",
-    "gatsby-plugin-sass": "^6.12.3",
+    "gatsby-plugin-sass": "^3.2.0",
     "gatsby-plugin-sharp": "^5.12.3",
     "gatsby-plugin-sitemap": "^6.12.3",
     "gatsby-source-filesystem": "^5.12.1",
+    "gatsby-transformer-remark": "^6.12.3",
     "gatsby-transformer-sharp": "^5.12.3",
     "react": "^18.2.0",
+    "react-cookie": "^6.1.1",
     "react-dom": "^18.2.0",
     "sass": "^1.69.5"
   }

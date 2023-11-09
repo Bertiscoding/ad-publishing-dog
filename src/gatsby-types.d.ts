@@ -1425,6 +1425,7 @@ type MarkdownRemarkFilterListInput = {
 
 type MarkdownRemarkFrontmatter = {
   readonly date: Maybe<Scalars['String']>;
+  readonly description: Maybe<Scalars['String']>;
   readonly featuredImage: Maybe<File>;
   readonly id: Maybe<Scalars['String']>;
   readonly linkText: Maybe<Scalars['String']>;
@@ -1435,6 +1436,7 @@ type MarkdownRemarkFrontmatter = {
 
 type MarkdownRemarkFrontmatterFieldSelector = {
   readonly date: InputMaybe<FieldSelectorEnum>;
+  readonly description: InputMaybe<FieldSelectorEnum>;
   readonly featuredImage: InputMaybe<FileFieldSelector>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly linkText: InputMaybe<FieldSelectorEnum>;
@@ -1445,6 +1447,7 @@ type MarkdownRemarkFrontmatterFieldSelector = {
 
 type MarkdownRemarkFrontmatterFilterInput = {
   readonly date: InputMaybe<StringQueryOperatorInput>;
+  readonly description: InputMaybe<StringQueryOperatorInput>;
   readonly featuredImage: InputMaybe<FileFilterInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly linkText: InputMaybe<StringQueryOperatorInput>;
@@ -1455,6 +1458,7 @@ type MarkdownRemarkFrontmatterFilterInput = {
 
 type MarkdownRemarkFrontmatterSortInput = {
   readonly date: InputMaybe<SortOrderEnum>;
+  readonly description: InputMaybe<SortOrderEnum>;
   readonly featuredImage: InputMaybe<FileSortInput>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly linkText: InputMaybe<SortOrderEnum>;
@@ -2780,6 +2784,7 @@ type SitePluginSortInput = {
 type SiteSiteMetadata = {
   readonly description: Maybe<Scalars['String']>;
   readonly image: Maybe<Scalars['String']>;
+  readonly logo: Maybe<Scalars['String']>;
   readonly siteUrl: Maybe<Scalars['String']>;
   readonly title: Maybe<Scalars['String']>;
 };
@@ -2787,6 +2792,7 @@ type SiteSiteMetadata = {
 type SiteSiteMetadataFieldSelector = {
   readonly description: InputMaybe<FieldSelectorEnum>;
   readonly image: InputMaybe<FieldSelectorEnum>;
+  readonly logo: InputMaybe<FieldSelectorEnum>;
   readonly siteUrl: InputMaybe<FieldSelectorEnum>;
   readonly title: InputMaybe<FieldSelectorEnum>;
 };
@@ -2794,6 +2800,7 @@ type SiteSiteMetadataFieldSelector = {
 type SiteSiteMetadataFilterInput = {
   readonly description: InputMaybe<StringQueryOperatorInput>;
   readonly image: InputMaybe<StringQueryOperatorInput>;
+  readonly logo: InputMaybe<StringQueryOperatorInput>;
   readonly siteUrl: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
 };
@@ -2801,6 +2808,7 @@ type SiteSiteMetadataFilterInput = {
 type SiteSiteMetadataSortInput = {
   readonly description: InputMaybe<SortOrderEnum>;
   readonly image: InputMaybe<SortOrderEnum>;
+  readonly logo: InputMaybe<SortOrderEnum>;
   readonly siteUrl: InputMaybe<SortOrderEnum>;
   readonly title: InputMaybe<SortOrderEnum>;
 };

@@ -5,8 +5,9 @@ module.exports = {
   siteMetadata: {
     title: `easy-dog-training`,
     siteUrl: `https://www.easy-dog-training.com`,
-    description: `Get the lowdown on stress-free dog training! Our site's all about simple, practical tips for teaching your pup the basics and some fun tricks. Whether you're a new dog parent or a seasoned pro, our easy-to-follow guides make training a breeze. No fancy stuff—just straightforward advice to help you and your furry friend build a solid connection. Say goodbye to training headaches and hello to a happy, well-behaved pup. Stress-free dog training guides for you!`,
+    description: `Master dog training at home! Discover breed-specific tips and tricks for effective, fun training. Your guide for stress-free dog training!`,
     image: `images/edt-logo-lg.png`,
+    logo: `images/edt-logo-sm.png`,
   },
   graphqlTypegen: true,
   plugins: ["gatsby-plugin-sass", "gatsby-plugin-image", "gatsby-plugin-sitemap", {

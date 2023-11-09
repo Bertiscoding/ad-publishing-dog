@@ -2,8 +2,11 @@ import React from "react"
 import { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import classNames from "classnames"
+import { useSiteMetadata } from "../../hooks/use-site-metadata"
 
 export default function Header() {
+  const { logo } = useSiteMetadata()
+
   const [isNavOpen, setIsMenuOpen] = useState(false)
   const toggleNav = () => {
     setIsMenuOpen(!isNavOpen)
@@ -39,7 +42,7 @@ export default function Header() {
         <div className="nav-wrapper">
         <a href="/" className="nav-logo">
           <img
-            src="images/edt-logo-sm.png"
+            src={`${window.location.origin}/${logo}`}
             alt="easy dog training logo"
             width={25}
           />

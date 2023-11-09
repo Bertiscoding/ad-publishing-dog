@@ -57,41 +57,42 @@ const HomePage = () => {
   }
 
   const sectionStyle = {
+    marginTop: 40,
+    maxWidth: 830,
+    display: "flex",
+    justifyContent: "center",
+    padding: 15,
+  }
+
+  const sectionWrapperStyle = {
     display: "flex",
     justifyContent: "space-around",
     width: "100%",
     flexWrap: "wrap",
-    marginTop: 50,
-    maxWidth: 830,
   }
 
   const itemLinkStyle = {
     textDecoration: "none",
     margin: "15px 5px",
-    width: 135,
+    width: 160,
   }
 
   const linkTextStyle = {
     color: "#EB9486",
     textAlign: "center",
+    marginTop: 10,
   }
-  
-  // Map over posts data
+
   const mapItems = data.posts.edges.map((item, i) => {
-    const { slug, linkText, featuredImage } = item.node.frontmatter
-        return (
-          <a href={slug} key={i} style={itemLinkStyle}>
+    const { id, slug, linkText, featuredImage } = item.node.frontmatter
+    return (
+          <a id={id} href={slug} key={i} style={itemLinkStyle}>
             <div style={itemImgStyle}>
               <div
                 id={`easy dog training ${linkText}`}
                 style={{backgroundImage: `url(${featuredImage.publicURL})`}}
                 className="hp-background-img"
               >
-                {/* <img
-                  src={featuredImage.publicURL}
-                  alt={`easy dog training ${linkText}`}
-                  style={itemImgStyle}
-                /> */}
               </div>
             </div>
             <h4 style={linkTextStyle}>{linkText}</h4>
@@ -126,7 +127,9 @@ const HomePage = () => {
             Find our training-guides down below!
           </h1>
         <section style={sectionStyle}>
-          { mapItems }
+          <div style={sectionWrapperStyle}>
+            { mapItems }
+          </div>
         </section>
       </main>
       <Footer />

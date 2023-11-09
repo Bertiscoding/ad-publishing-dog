@@ -1,5 +1,5 @@
 ---
-id: "beagle"
+id: 7
 slug: "/beagle"
 linkText: "Beagle"
 date: "November 2023"

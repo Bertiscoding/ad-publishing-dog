@@ -1,5 +1,5 @@
 ---
-id: "labrador-retriever"
+id: 1
 slug: "/labrador-retriever"
 linkText: "Labrador Retriever"
 date: "October 2023"

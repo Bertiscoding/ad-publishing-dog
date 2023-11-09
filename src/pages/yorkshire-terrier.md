@@ -1,5 +1,5 @@
 ---
-id: "yorkshire-terrier"
+id: 9
 slug: "/yorkshire-terrier"
 linkText: "Yorkshire Terrier"
 date: "November 2023"

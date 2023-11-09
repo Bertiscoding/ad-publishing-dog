@@ -1427,7 +1427,7 @@ type MarkdownRemarkFrontmatter = {
   readonly date: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
   readonly featuredImage: Maybe<File>;
-  readonly id: Maybe<Scalars['String']>;
+  readonly id: Maybe<Scalars['Int']>;
   readonly linkText: Maybe<Scalars['String']>;
   readonly slug: Maybe<Scalars['String']>;
   readonly summary: Maybe<Scalars['String']>;
@@ -1449,7 +1449,7 @@ type MarkdownRemarkFrontmatterFilterInput = {
   readonly date: InputMaybe<StringQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
   readonly featuredImage: InputMaybe<FileFilterInput>;
-  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<IntQueryOperatorInput>;
   readonly linkText: InputMaybe<StringQueryOperatorInput>;
   readonly slug: InputMaybe<StringQueryOperatorInput>;
   readonly summary: InputMaybe<StringQueryOperatorInput>;

@@ -53,7 +53,6 @@ const HomePage = () => {
 
   const itemImgStyle = {
     height: 100,
-    width: "auto",
     borderRadius: 10,
   }
 
@@ -68,7 +67,8 @@ const HomePage = () => {
 
   const itemLinkStyle = {
     textDecoration: "none",
-    marginBottom: 30
+    margin: "15px 5px",
+    width: 135,
   }
 
   const linkTextStyle = {
@@ -81,12 +81,18 @@ const HomePage = () => {
     const { slug, linkText, featuredImage } = item.node.frontmatter
         return (
           <a href={slug} key={i} style={itemLinkStyle}>
-            <div>
-              <img
-                src={featuredImage.publicURL}
-                alt={`easy dog training ${linkText}`}
-                style={itemImgStyle}
-              />
+            <div style={itemImgStyle}>
+              <div
+                id={`easy dog training ${linkText}`}
+                style={{backgroundImage: `url(${featuredImage.publicURL})`}}
+                className="hp-background-img"
+              >
+                {/* <img
+                  src={featuredImage.publicURL}
+                  alt={`easy dog training ${linkText}`}
+                  style={itemImgStyle}
+                /> */}
+              </div>
             </div>
             <h4 style={linkTextStyle}>{linkText}</h4>
           </a>

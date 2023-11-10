@@ -6,7 +6,7 @@ date: "November 2023"
 title: "Training Your Australian Shepherd: A Comprehensive Guide"
 description: "Transform your Australian Shepherd with our comprehensive training guide. Master obedience, leash training, and build a dynamic bond. Start training now!"
 summary: "Welcome to the ultimate guide on training your intelligent and agile Australian Shepherd! Unlock effective methods and practical tips for a well-behaved and spirited companion. Let's delve into understanding, consistency, and the power of positive reinforcement."
-featuredImage: ../images/australian-shepherd.jpg
+featuredImage: "../images/australian-shepherd.jpg"
 ---
 
 ## Understanding the Australian Shepherd Breed

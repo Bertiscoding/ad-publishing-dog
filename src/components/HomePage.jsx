@@ -83,14 +83,15 @@ const HomePage = () => {
     marginTop: 10,
   }
 
-  const mapItems = data.posts.edges.map((item, i) => {
+
+    const mapItems = data.posts.edges.map((item, i) => {
     const { id, slug, linkText, featuredImage } = item.node.frontmatter
     return (
           <a id={id} href={slug} key={i} style={itemLinkStyle}>
             <div style={itemImgStyle}>
               <div
                 id={`easy dog training ${linkText}`}
-                style={{backgroundImage: `url(${featuredImage.publicURL})`}}
+                style={featuredImage ? {backgroundImage: `url(${featuredImage.publicURL})`} : {backgroundColor: '#97A7B3'}}
                 className="hp-background-img"
               >
               </div>
@@ -98,6 +99,9 @@ const HomePage = () => {
             <h4 style={linkTextStyle}>{linkText}</h4>
           </a>
         )
+  })
+  const sortedItems = mapItems.sort((a, b) => { 
+    return a.id - b.id
   })
 
   return (
@@ -128,7 +132,7 @@ const HomePage = () => {
           </h1>
         <section style={sectionStyle}>
           <div style={sectionWrapperStyle}>
-            { mapItems }
+            { sortedItems }
           </div>
         </section>
       </main>

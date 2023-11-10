@@ -6,7 +6,7 @@ date: "November 2023"
 title: "Training Your Boxer: A Comprehensive Guide"
 description: "Unlock the full potential of your Boxer with our comprehensive training guide. Master obedience, leash training, and build a strong bond. Start training now!"
 summary: "Welcome to the ultimate guide on training your beloved Boxer! Uncover effective methods and practical tips for a well-behaved and happy companion. Let's dive into understanding, consistency, and positive reinforcement."
-featuredImage: ../images/boxer.jpg
+featuredImage: "../images/boxer.jpg"
 ---
 
 ## Understanding the Boxer Breed

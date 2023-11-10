@@ -111,7 +111,8 @@ const CookieBanner = () => {
         <div style={cookieBannerWrapperStyle}>
           <div style={cookieBannerContainerStyle}>
           <h4 style={cookieTitleStyle}>This websites uses cookies.</h4>
-          <p>We use cookies to make the site work better. If you allow us to do so by clicking by clicking on "Accept Cookies".
+          <p>We use cookies to make the site work better. If you allow us to do so by clicking by clicking on&nbsp;
+            <span style={{color: '#eb9486', fontWeight: 600, cursor: 'pointer'}} onClick={saveAllCookies}>"Accept Cookies"</span>.
             You can also choose which cookies you want to allow.</p>
           <div style={buttonContainerStyle}>
             <button style={buttonGhostStyle} onClick={() => setShowSettings(!showSettings)}>Personalize</button>

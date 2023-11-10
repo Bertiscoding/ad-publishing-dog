@@ -6,7 +6,7 @@ date: "November 2023"
 title: "Training Your Great Dan: A Comprehensive Guide"
 description: "Unlock the potential of your Great Dane with our comprehensive training guide. Master obedience, leash training, and build a strong bond. Start training now!"
 summary: "Welcome to the ultimate guide on training your magnificent Great Dane! Discover effective methods and practical tips for a well-behaved and joyful companion. Let's explore understanding, consistency, and the power of positive reinforcement."
-featuredImage: ../images/great-dane.jpg
+featuredImage: "../images/great-dane.jpg"
 ---
 
 ## Understanding the Great Dane Breed

@@ -6,7 +6,7 @@ date: "November 2023"
 title: "Training Your Shih Tzu: A Comprehensive Guide"
 description: "Unlock the full potential of your Shih Tzu with our comprehensive training guide. Master obedience, leash training, and build a strong bond. Start training now!"
 summary: "Welcome to the comprehensive guide on training your delightful Shih Tzu! Uncover effective methods and practical tips for a well-mannered and joyful companion. Let's delve into understanding, consistency, and the power of positive reinforcement."
-featuredImage: ../images/shih-tzu.jpg
+featuredImage: "../images/shih-tzu.jpg"
 ---
 
 ## Understanding the Shih Tzu Breed

@@ -6,7 +6,7 @@ date: "November 2023"
 title: "Training Your Shetland Sheepdog: A Comprehensive Guide"
 description: "Unlock the full potential of your Shetland Sheepdog with our comprehensive training guide. Learn obedience, socialization, and build a strong bond. Start training today!"
 summary: "Shetland Sheepdogs are intelligent, agile, and affectionate. Before training, grasp their unique traits. Known for loyalty, they thrive on mental stimulation and human connection."
-featuredImage: ../images/shetland-sheepdog.jpg
+featuredImage: "../images/shetland-sheepdog.jpg"
 ---
 
 ## Starting Early and Being Consistent

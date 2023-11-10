@@ -6,7 +6,7 @@ date: "November 2023"
 title: "Training Your Doberman Pinscher: A Comprehensive Guide"
 description: "Transform your Doberman Pinscher with our comprehensive training guide. Master obedience, leash training, and build a devoted bond. Start training now!"
 summary: "Welcome to the ultimate guide on training your intelligent and loyal Doberman Pinscher! Explore effective methods and practical tips for a well-behaved and devoted companion. Let's delve into understanding, consistency, and the power of positive reinforcement."
-featuredImage: ../images/doberman-pinscher.jpg
+featuredImage: "../images/doberman-pinscher.jpg"
 ---
 
 ## Understanding the Doberman Pinscher Breed

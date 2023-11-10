@@ -6,7 +6,7 @@ date: "November 2023"
 title: "Training Your Siberian Husky: A Comprehensive Guide"
 description: "Unlock the potential of your Siberian Husky with our comprehensive training guide. Master obedience, leash training, and build a strong bond. Start your journey now!"
 summary: "Welcome to the comprehensive guide on training your Siberian Husky! In this guide, we'll delve into effective methods and practical tips to ensure a well-behaved and happy Husky. Let's embark on a journey of understanding, consistency, and positive reinforcement."
-featuredImage: ../images/siberian-husky.jpg
+featuredImage: "../images/siberian-husky.jpg"
 ---
 
 ## Understanding the Siberian Husky

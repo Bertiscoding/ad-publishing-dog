@@ -6,7 +6,7 @@ date: "November 2023"
 title: "Training Your iniature Schnauzer: A Comprehensive Guide"
 description: "Unlock the full potential of your Miniature Schnauzer with our comprehensive training guide. Learn obedience, socialization, and build a strong bond. Start training today!"
 summary: "Miniature Schnauzers are intelligent, spirited, and charismatic little dogs. Before diving into training, it's crucial to understand the breed's characteristics. These dogs are known for their alertness, loyalty, and playful nature. They thrive on human companionship and are quick learners, making them an ideal candidate for training."
-featuredImage: ../images/miniature-schnauzer.jpg
+featuredImage: "../images/miniature-schnauzer.jpg"
 ---
 
 ## Starting Early and Being Consistent

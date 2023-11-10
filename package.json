@@ -17,7 +17,7 @@
   "dependencies": {
     "@mdx-js/react": "^3.0.0",
     "classnames": "^2.3.2",
-    "gatsby": "^5.12.4",
+    "gatsby": "^5.12.9",
     "gatsby-plugin-gdpr-cookies": "^2.0.9",
     "gatsby-plugin-image": "^3.12.3",
     "gatsby-plugin-manifest": "^5.12.3",

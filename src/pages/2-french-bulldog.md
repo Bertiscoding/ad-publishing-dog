@@ -1,5 +1,5 @@
 ---
-id: "french-bulldog"
+id: 2
 slug: "/french-bulldog"
 linkText: "French Bulldog"
 date: "October 2023"

@@ -53,44 +53,55 @@ const HomePage = () => {
 
   const itemImgStyle = {
     height: 100,
-    width: "auto",
     borderRadius: 10,
   }
 
   const sectionStyle = {
+    marginTop: 40,
+    maxWidth: 830,
+    display: "flex",
+    justifyContent: "center",
+    padding: 15,
+  }
+
+  const sectionWrapperStyle = {
     display: "flex",
     justifyContent: "space-around",
     width: "100%",
     flexWrap: "wrap",
-    marginTop: 50,
-    maxWidth: 830,
   }
 
   const itemLinkStyle = {
     textDecoration: "none",
-    marginBottom: 30
+    margin: "15px 5px",
+    width: 160,
   }
 
   const linkTextStyle = {
     color: "#EB9486",
     textAlign: "center",
+    marginTop: 10,
   }
-  
-  // Map over posts data
-  const mapItems = data.posts.edges.map((item, i) => {
-    const { slug, linkText, featuredImage } = item.node.frontmatter
-        return (
-          <a href={slug} key={i} style={itemLinkStyle}>
-            <div>
-              <img
-                src={featuredImage.publicURL}
-                alt={`easy dog training ${linkText}`}
-                style={itemImgStyle}
-              />
+
+
+    const mapItems = data.posts.edges.map((item, i) => {
+    const { id, slug, linkText, featuredImage } = item.node.frontmatter
+    return (
+          <a id={id} href={slug} key={i} style={itemLinkStyle}>
+            <div style={itemImgStyle}>
+              <div
+                id={`easy dog training ${linkText}`}
+                style={featuredImage ? {backgroundImage: `url(${featuredImage.publicURL})`} : {backgroundColor: '#97A7B3'}}
+                className="hp-background-img"
+              >
+              </div>
             </div>
             <h4 style={linkTextStyle}>{linkText}</h4>
           </a>
         )
+  })
+  const sortedItems = mapItems.sort((a, b) => { 
+    return a.id - b.id
   })
 
   return (
@@ -120,7 +131,9 @@ const HomePage = () => {
             Find our training-guides down below!
           </h1>
         <section style={sectionStyle}>
-          { mapItems }
+          <div style={sectionWrapperStyle}>
+            { sortedItems }
+          </div>
         </section>
       </main>
       <Footer />

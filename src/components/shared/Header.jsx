@@ -1,16 +1,26 @@
-import React from "react"
-import { useState } from "react"
+import React, { useState, useEffect} from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import classNames from "classnames"
 import { useSiteMetadata } from "../../hooks/use-site-metadata"
+import { useCookies } from "react-cookie"
+import CookieBanner from "../shared/CookieBanner"
+import classNames from "classnames"
 
 export default function Header() {
+  const [cookies] = useCookies(['accepted']);
   const { logo } = useSiteMetadata()
 
+  const [showBanner, setShowBanner] = useState(false)
   const [isNavOpen, setIsMenuOpen] = useState(false)
   const toggleNav = () => {
     setIsMenuOpen(!isNavOpen)
   }
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowBanner(true)
+    }, 3000);
+    return () => clearTimeout(timeout)
+  }, [])
 
   const navLinks = useStaticQuery(graphql`
     query {
@@ -18,6 +28,7 @@ export default function Header() {
         edges {
           node {
             frontmatter {
+              id
               slug
               linkText
             }
@@ -28,9 +39,9 @@ export default function Header() {
   `)
 
   const mapLinks = navLinks.posts.edges.map((el, i) => {
-    const {slug, linkText} = el.node.frontmatter
+    const {id, slug, linkText} = el.node.frontmatter
     return (
-      <li className="nav-item" key={i}>
+      <li id={id} className="nav-item" key={i}>
         <a href={slug} className="nav-link">{linkText}</a>
       </li>
     )
@@ -55,6 +66,12 @@ export default function Header() {
         </div>
         </div>
       </nav>
+      { showBanner ? (
+          !cookies.accepted && (
+            <CookieBanner />
+          )
+        ) : null
+      }
     </>
   )
 }

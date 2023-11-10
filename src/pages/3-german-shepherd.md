@@ -1,5 +1,5 @@
 ---
-id: "german-shepherd"
+id: 3
 slug: "/german-shepherd"
 linkText: "German Shepherd"
 date: "October 2023"

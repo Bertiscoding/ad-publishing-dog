@@ -1426,8 +1426,8 @@ type MarkdownRemarkFilterListInput = {
 type MarkdownRemarkFrontmatter = {
   readonly date: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
-  readonly featuredImage: Maybe<File>;
-  readonly id: Maybe<Scalars['Int']>;
+  readonly featuredImage: Maybe<Scalars['String']>;
+  readonly id: Maybe<Scalars['String']>;
   readonly linkText: Maybe<Scalars['String']>;
   readonly slug: Maybe<Scalars['String']>;
   readonly summary: Maybe<Scalars['String']>;
@@ -1437,7 +1437,7 @@ type MarkdownRemarkFrontmatter = {
 type MarkdownRemarkFrontmatterFieldSelector = {
   readonly date: InputMaybe<FieldSelectorEnum>;
   readonly description: InputMaybe<FieldSelectorEnum>;
-  readonly featuredImage: InputMaybe<FileFieldSelector>;
+  readonly featuredImage: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly linkText: InputMaybe<FieldSelectorEnum>;
   readonly slug: InputMaybe<FieldSelectorEnum>;
@@ -1448,8 +1448,8 @@ type MarkdownRemarkFrontmatterFieldSelector = {
 type MarkdownRemarkFrontmatterFilterInput = {
   readonly date: InputMaybe<StringQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
-  readonly featuredImage: InputMaybe<FileFilterInput>;
-  readonly id: InputMaybe<IntQueryOperatorInput>;
+  readonly featuredImage: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly linkText: InputMaybe<StringQueryOperatorInput>;
   readonly slug: InputMaybe<StringQueryOperatorInput>;
   readonly summary: InputMaybe<StringQueryOperatorInput>;
@@ -1459,7 +1459,7 @@ type MarkdownRemarkFrontmatterFilterInput = {
 type MarkdownRemarkFrontmatterSortInput = {
   readonly date: InputMaybe<SortOrderEnum>;
   readonly description: InputMaybe<SortOrderEnum>;
-  readonly featuredImage: InputMaybe<FileSortInput>;
+  readonly featuredImage: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly linkText: InputMaybe<SortOrderEnum>;
   readonly slug: InputMaybe<SortOrderEnum>;

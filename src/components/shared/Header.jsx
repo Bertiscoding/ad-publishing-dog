@@ -5,8 +5,11 @@ import { useCookies } from "react-cookie"
 import CookieBanner from "../shared/CookieBanner"
 import classNames from "classnames"
 
+import ReactGA from 'react-ga';
+import TagManager from 'react-gtm-module'
+
 export default function Header() {
-  const [cookies] = useCookies(['accepted']);
+  const [cookies] = useCookies();
   const { logo } = useSiteMetadata()
 
   const [showBanner, setShowBanner] = useState(false)
@@ -14,6 +17,13 @@ export default function Header() {
   const toggleNav = () => {
     setIsMenuOpen(!isNavOpen)
   }
+
+  useEffect(() => {
+    if(cookies.google_analytics) ( ReactGA.initialize('G-WVQC1L6FB2'))
+    if(cookies.google_tagmanager) ( TagManager.initialize({
+      gtmId: 'GTM-ABCDEFG'
+  }))
+  }, [cookies])
 
   useEffect(() => {
     const timeout = setTimeout(() => {

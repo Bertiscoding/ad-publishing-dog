@@ -24,7 +24,8 @@ export default function Header() {
       gtmId: 'GTM-ABCDEFG'
   }))
   }, [cookies])
-
+  console.log('cookies.google_analytics', cookies.google_analytics);
+  console.log('cookies.google_tagmanager', cookies.google_tagmanager);
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowBanner(true)

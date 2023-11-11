@@ -15,7 +15,7 @@ module.exports = {
     options: {
       "icon": "src/images/favicon-32x32.png"
     }
-  }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-image", {
+  }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-plugin-image", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",

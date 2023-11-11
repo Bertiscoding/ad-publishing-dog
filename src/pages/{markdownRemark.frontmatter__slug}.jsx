@@ -71,7 +71,7 @@ export default function BlogPostTemplate({
               style={featuredImgStyle}
               objectFit="none"
               objectPosition="50% 50%"
-              constrained
+              constrained="true"
             />
           </div>
           <AdBannerTop />

@@ -1,8 +1,6 @@
 import React, { useState } from "react"
 import { useLocation } from "@reach/router"
-import { initializeAndTrack } from 'gatsby-plugin-gdpr-cookies'
 import { useCookies } from "react-cookie";
-
 
 const CookieBanner = () => {
   const location = useLocation()
@@ -14,26 +12,26 @@ const CookieBanner = () => {
 
   const saveSettings = () => {
     if (categories.includes("adtracking") && categories.includes("analytics")) {
-      setCookie("gatsby-gdpr-google-analytics", true)
-      setCookie("gatsby-gdpr-google-tagmanager", true)
+      setCookie("google_analytics", true, location)
+      setCookie("google_tagmanager", true, location)
     } else if (categories.includes("adtracking")) {
-      setCookie("gatsby-gdpr-google-tagmanager", true)
+      setCookie("google_tagmanager", true, location)
     } else if (categories.includes("analytics")) {
-      setCookie("gatsby-gdpr-google-analytics", true)
+      setCookie("google_analytics", true, location)
     } else {
-      removeCookie("gatsby-gdpr-google-analytics", true)
-      removeCookie("gatsby-gdpr-google-tagmanager", true)
+      removeCookie("google_analytics", true, location)
+      removeCookie("google_tagmanager", true, location)
     }
-    initializeAndTrack(location);
-    setCookie("accepted", true);
+    console.log('saveSettings location', location) // initializeAndTrack(location);
+    setCookie("accepted", true, location);
     setShowCookieBanner(!showCookieBanner)
   }
 
   const saveAllCookies = () => {
-    initializeAndTrack(location);
-    setCookie("gatsby-gdpr-google-analytics", true)
-    setCookie("gatsby-gdpr-google-tagmanager", true)
-    setCookie("accepted", true);
+    console.log('saveAllCookies location', location) // initializeAndTrack(location);
+    setCookie("google_analytics", true, location)
+    setCookie("google_tagmanager", true, location)
+    setCookie("accepted", true, location);
     setShowCookieBanner(!showCookieBanner)
   }
 

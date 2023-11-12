@@ -1,8 +1,8 @@
 [build]
   command = "gatsby build"
 [context.production.environment]
-  NODE_VERSION = "18"
-  NPM_VERSION = "9"
+  NODE_VERSION = "18.18.2"
+  NPM_VERSION = "9.8.1"
 [context.branch-deploy.environment]
-  NODE_VERSION = "18"
-  NPM_VERSION = "9"
+  NODE_VERSION = "18.18.2"
+  NPM_VERSION = "9.8.1"

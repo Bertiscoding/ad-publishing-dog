@@ -7,7 +7,7 @@ const Seo = ({ title, description, image, url, children }) => {
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: image || `${siteUrl}/${defaultImage}`,
+    image: image || `${defaultImage}`,
     url: url || siteUrl
   }
 

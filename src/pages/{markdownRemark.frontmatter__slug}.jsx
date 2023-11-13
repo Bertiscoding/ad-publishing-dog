@@ -1,10 +1,11 @@
-import * as React from "react"
+import React from "react"
+import { useLocation } from "@reach/router"
 import { graphql } from "gatsby"
 import Header from "../components/shared/Header"
 import Footer from "../components/shared/Footer"
 import AdBannerTop from "../components/shared/AdBannerTop"
 import AdBannerBottom from "../components/shared/AdBannerBottom"
-import { Seo } from "../components/Seo"
+import Seo from "../components/Seo"
 
 export default function BlogPostTemplate({
   data, // this prop will be injected by the GraphQL query below.
@@ -45,11 +46,6 @@ export default function BlogPostTemplate({
     marginTop: 30,
   }
 
-  const featuredImgWrapper = {
-    display: "flex",
-    justifyContent: "center",
-  }
-
   return (
     <>
       <Header />
@@ -76,13 +72,14 @@ export default function BlogPostTemplate({
 }
 
 export const Head = ({data}) => {
+  const location = useLocation()
   const { title, description, featuredImage } = data.markdownRemark.frontmatter
   return (
     <Seo
       title={title}
       description={description}
       image={featuredImage.publicURL}
-      url={window.location.href }
+      url={ location.href }
     />
   )
 }

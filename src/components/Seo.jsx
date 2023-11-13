@@ -25,4 +25,4 @@ const Seo = ({ title, description, image, url, children }) => {
   )
 }
 
-export default { Seo };
+export default Seo;

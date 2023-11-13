@@ -11,13 +11,9 @@ const CookieBanner = () => {
   const [_, setCookie, removeCookie] = useCookies(["accepted"]);
 
   const saveSettings = () => {
-    if (categories.includes("adtracking") && categories.includes("analytics")) {
+   if (categories.includes("analytics")) {
       setCookie("google_analytics", true, location)
       setCookie("google_tagmanager", true, location)
-    } else if (categories.includes("adtracking")) {
-      setCookie("google_tagmanager", true, location)
-    } else if (categories.includes("analytics")) {
-      setCookie("google_analytics", true, location)
     } else {
       removeCookie("google_analytics", true, location)
       removeCookie("google_tagmanager", true, location)
@@ -130,10 +126,6 @@ const CookieBanner = () => {
           <label htmlFor="analytics" style={selectionLabelStyle}>
             <input type="checkbox" name="analytics" id="analytics" style={selectionCheckboxStyle} onChange={handleChangeSettings} />
             Analytics
-          </label>
-          <label htmlFor="adtracking" style={selectionLabelStyle}>
-            <input type="checkbox" name="adtracking" id="adtracking" style={selectionCheckboxStyle} onChange={handleChangeSettings} />
-            Ad performance
           </label>
         </div>
         <div style={buttonContainerStyle}>

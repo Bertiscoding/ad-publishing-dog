@@ -674,25 +674,6 @@ type FloatQueryOperatorInput = {
   readonly nin: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Float']>>>;
 };
 
-type GatsbyImageFormat =
-  | 'auto'
-  | 'avif'
-  | 'jpg'
-  | ''
-  | 'png'
-  | 'webp';
-
-type GatsbyImageLayout =
-  | 'constrained'
-  | 'fixed'
-  | 'fullWidth';
-
-type GatsbyImagePlaceholder =
-  | 'blurred'
-  | 'dominantColor'
-  | 'none'
-  | 'tracedSVG';
-
 type IntQueryOperatorInput = {
   readonly eq: InputMaybe<Scalars['Int']>;
   readonly gt: InputMaybe<Scalars['Int']>;

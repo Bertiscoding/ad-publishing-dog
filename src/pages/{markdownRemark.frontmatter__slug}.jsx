@@ -1,6 +1,5 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Header from "../components/shared/Header"
 import Footer from "../components/shared/Footer"
 import AdBannerTop from "../components/shared/AdBannerTop"
@@ -12,7 +11,7 @@ export default function BlogPostTemplate({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-  let featuredImg = getImage(frontmatter.featuredImage?.childImageSharp?.gatsbyImageData)
+  let featuredImg = frontmatter.featuredImage.publicURL
 
   const frameWrapper = {
     display: "flex",
@@ -51,10 +50,6 @@ export default function BlogPostTemplate({
     justifyContent: "center",
   }
 
-  const featuredImgStyle = {
-    maxWidth: 830,
-  }
-
   return (
     <>
       <Header />
@@ -63,17 +58,11 @@ export default function BlogPostTemplate({
           <h1 style={headingH1}>{frontmatter.title}</h1>
           <h3 style={summaryStyle}>{frontmatter.summary}</h3>
           <p style={dateStyle}>{frontmatter.date}</p>
-          <div style={featuredImgWrapper}>
-            <GatsbyImage
-              image={featuredImg}
-              loading={featuredImg.lazy}
-              alt={frontmatter.title}
-              style={featuredImgStyle}
-              objectFit="none"
-              objectPosition="50% 50%"
-              constrained="true"
-            />
-          </div>
+          <div
+            title={frontmatter.title}
+            style={featuredImg ? {backgroundImage: `url(${featuredImg})`} : {backgroundColor: '#97A7B3'}}
+            className="lp-background-img"
+          ></div>
           <AdBannerTop />
           <div
             dangerouslySetInnerHTML={{ __html: html }}

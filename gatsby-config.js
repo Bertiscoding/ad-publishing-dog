@@ -10,12 +10,12 @@ module.exports = {
     logo: `images/edt-logo-sm.png`,
   },
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-sass", "gatsby-plugin-image", "gatsby-plugin-sitemap", {
+  plugins: ["gatsby-plugin-sass", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
       "icon": "src/images/favicon-32x32.png"
     }
-  }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-plugin-image", {
+  }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
@@ -40,5 +40,15 @@ module.exports = {
        pedantic: true,
        gfm: true,
     },
-  },]
+  },
+  {
+    resolve: `gatsby-plugin-mdx`,
+    options: {
+       mdxOptions: {
+         remarkPlugins: [],
+         rehypePlugins: [],
+       },
+    },
+  },
+]
 };

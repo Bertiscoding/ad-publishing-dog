@@ -17,7 +17,7 @@ h2 {
   color: #515267;
   font-weight: 700;
   font-size: 22px;
-  margin-top: 15px;
+  margin: 15px 0 5px 0;
 }
 
 .nav {
@@ -112,11 +112,23 @@ h2 {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-.hp-background-img {
+.hp-background-img,
+.lp-background-img {
   height: 100%;
   width: 100%;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
+}
+
+.lp-background-img {
+  border-radius: 0;
+  height: 350px;
+}
+
+@media screen and (min-width: 700px) {
+  .lp-background-img {
+    height: 570px;
+  }
 }

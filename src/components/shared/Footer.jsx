@@ -48,7 +48,7 @@ const Footer = () => {
       <div style={footerContainer}>
         <div style={mainLogoLarge}>
             <img
-              src="images/edt-logo-lg.png"
+              src="/images/edt-logo-lg.png"
               alt="easy dog training"
               style={mainLogoLargeImg}
             />

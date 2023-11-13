@@ -11,7 +11,7 @@ import TagManager from 'react-gtm-module'
 
 export default function Header() {
   const [cookies] = useCookies();
-  const { logo } = useSiteMetadata()
+  const { title, logo } = useSiteMetadata()
   const location = useLocation()
 
   const [showBanner, setShowBanner] = useState(false)
@@ -21,11 +21,24 @@ export default function Header() {
   }
 
   useEffect(() => {
-    if(cookies.google_analytics) ( ReactGA.initialize('G-WVQC1L6FB2'))
+    if (process.env.NODE_ENV == 'development') return;
+
+    if(cookies.google_analytics) ( ReactGA.initialize(process.env.REACT_APP_GA_ID))
     if(cookies.google_tagmanager) ( TagManager.initialize({
-      gtmId: 'GTM-ABCDEFG'
+      gtmId: process.env.REACT_APP_GTM_ID
   }))
   }, [cookies])
+
+  useEffect(() => {
+    ReactGA.pageview(location.pathname);
+    TagManager.dataLayer({
+      dataLayer: {
+        event: 'pageview',
+        pagePath: location.pathname,
+        pageTitle: title,
+      },
+    })
+  }, [location.href])
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -79,7 +92,7 @@ export default function Header() {
         </div>
       </nav>
       { showBanner ? (
-          !cookies.accepted && (
+          (!cookies.accepted && process.env.NODE_ENV !== 'development') && (
             <CookieBanner />
           )
         ) : null

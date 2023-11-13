@@ -20,7 +20,7 @@
     "gatsby": "^5.12.9",
     "gatsby-plugin-manifest": "^5.12.3",
     "gatsby-plugin-mdx": "^5.12.3",
-    "gatsby-plugin-sass": "^3.2.0",
+    "gatsby-plugin-sass": "^6.12.3",
     "gatsby-plugin-sharp": "^5.12.3",
     "gatsby-plugin-sitemap": "^6.12.3",
     "gatsby-source-filesystem": "^5.12.1",

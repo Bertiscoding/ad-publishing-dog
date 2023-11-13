@@ -11,7 +11,7 @@ featuredImage: "../images/shetland-sheepdog.jpg"
 
 ## Starting Early and Being Consistent
 
-Commence training early for a well-behaved Sheltie. Consistency is key—establish routines, commands, and rewards. Lay the foundation for advanced training with early, positive experiences.
+Commence training early for a well-behaved Sheltie. Consistency is key — establish routines, commands, and rewards. Lay the foundation for advanced training with early, positive experiences.
 
 ## Basic Commands
 

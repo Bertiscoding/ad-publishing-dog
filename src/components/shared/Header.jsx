@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from "react"
+import { useLocation } from "@reach/router"
 import { graphql, useStaticQuery } from "gatsby"
 import { useSiteMetadata } from "../../hooks/use-site-metadata"
 import { useCookies } from "react-cookie"
@@ -11,6 +12,7 @@ import TagManager from 'react-gtm-module'
 export default function Header() {
   const [cookies] = useCookies();
   const { logo } = useSiteMetadata()
+  const location = useLocation()
 
   const [showBanner, setShowBanner] = useState(false)
   const [isNavOpen, setIsMenuOpen] = useState(false)
@@ -63,7 +65,7 @@ export default function Header() {
         <div className="nav-wrapper">
         <a href="/" className="nav-logo">
           <img
-            src={`${window.location.origin}/${logo}`}
+            src={`${location.origin}/${logo}`}
             alt="easy dog training logo"
             width={25}
           />

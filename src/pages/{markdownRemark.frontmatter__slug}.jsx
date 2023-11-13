@@ -4,7 +4,7 @@ import Header from "../components/shared/Header"
 import Footer from "../components/shared/Footer"
 import AdBannerTop from "../components/shared/AdBannerTop"
 import AdBannerBottom from "../components/shared/AdBannerBottom"
-import { Seo } from "../components/seo"
+// import { Seo } from "../components/Seo"
 
 export default function BlogPostTemplate({
   data, // this prop will be injected by the GraphQL query below.
@@ -75,17 +75,17 @@ export default function BlogPostTemplate({
   )
 }
 
-export const Head = ({data}) => {
-  const { title, description, featuredImage } = data.markdownRemark.frontmatter
-  return (
-    <Seo
-      title={title}
-      description={description}
-      image={featuredImage.publicURL}
-      url={window.location.href }
-    />
-  )
-}
+// export const Head = ({data}) => {
+//   const { title, description, featuredImage } = data.markdownRemark.frontmatter
+//   return (
+//     <Seo
+//       title={title}
+//       description={description}
+//       image={featuredImage.publicURL}
+//       url={window.location.href }
+//     />
+//   )
+// }
 
 
 export const pageQuery = graphql`

@@ -90,7 +90,7 @@ const HomePage = () => {
           <a id={id} href={slug} key={i} style={itemLinkStyle}>
             <div style={itemImgStyle}>
               <div
-                id={`easy dog training ${linkText}`}
+                title={`easy dog training ${linkText}`}
                 style={featuredImage ? {backgroundImage: `url(${featuredImage.publicURL})`} : {backgroundColor: '#97A7B3'}}
                 className="hp-background-img"
               >

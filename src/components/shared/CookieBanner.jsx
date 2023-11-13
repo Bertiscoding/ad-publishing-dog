@@ -22,13 +22,11 @@ const CookieBanner = () => {
       removeCookie("google_analytics", true, location)
       removeCookie("google_tagmanager", true, location)
     }
-    console.log('saveSettings location', location) // initializeAndTrack(location);
-    setCookie("accepted", true, location);
+    setCookie("accepted", true);
     setShowCookieBanner(!showCookieBanner)
   }
 
   const saveAllCookies = () => {
-    console.log('saveAllCookies location', location) // initializeAndTrack(location);
     setCookie("google_analytics", true, location)
     setCookie("google_tagmanager", true, location)
     setCookie("accepted", true, location);

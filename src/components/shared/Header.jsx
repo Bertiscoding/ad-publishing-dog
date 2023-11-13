@@ -5,13 +5,14 @@ import { useSiteMetadata } from "../../hooks/use-site-metadata"
 import { useCookies } from "react-cookie"
 import CookieBanner from "../shared/CookieBanner"
 import classNames from "classnames"
+import "../../styles/style.scss"
 
 import ReactGA from 'react-ga';
 import TagManager from 'react-gtm-module'
 
 export default function Header() {
   const [cookies] = useCookies();
-  const { title, logo } = useSiteMetadata()
+  const { title } = useSiteMetadata()
   const location = useLocation()
 
   const [showBanner, setShowBanner] = useState(false)
@@ -78,7 +79,10 @@ export default function Header() {
         <a href={slug} className="nav-link">{linkText}</a>
       </li>
     )
-  }) 
+  })
+  const sortedItems = mapLinks.sort((a, b) => { 
+    return a.props.id - b.props.id
+  })
 
   return (
     <>
@@ -86,12 +90,12 @@ export default function Header() {
         <div className="nav-wrapper">
         <a href="/" className="nav-logo">
           <img
-            src={`${location.origin}/${logo}`}
+            src="../images/edt-logo-sm.png"
             alt="easy dog training logo"
             width={25}
           />
         </a>
-          <ul className={classNames("nav-menu", isNavOpen ? "active" : "")}>{mapLinks}</ul>
+          <ul className={classNames("nav-menu", isNavOpen ? "active" : "")}>{sortedItems}</ul>
         <div className={classNames("hamburger", isNavOpen ? "active" : "")} onClick={toggleNav}>
           <span className="bar"></span>
           <span className="bar"></span>

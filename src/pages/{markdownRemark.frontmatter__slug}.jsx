@@ -6,6 +6,7 @@ import Footer from "../components/shared/Footer"
 import AdBannerTop from "../components/shared/AdBannerTop"
 import AdBannerBottom from "../components/shared/AdBannerBottom"
 import Seo from "../components/Seo"
+import "../styles/style.scss"
 
 export default function BlogPostTemplate({
   data, // this prop will be injected by the GraphQL query below.

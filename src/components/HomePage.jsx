@@ -101,7 +101,7 @@ const HomePage = () => {
         )
   })
   const sortedItems = mapItems.sort((a, b) => { 
-    return a.id - b.id
+    return a.props.id - b.props.id
   })
 
   return (

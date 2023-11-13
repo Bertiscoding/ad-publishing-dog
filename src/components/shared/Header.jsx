@@ -16,29 +16,37 @@ export default function Header() {
 
   const [showBanner, setShowBanner] = useState(false)
   const [isNavOpen, setIsMenuOpen] = useState(false)
+  const [loadGa, setLoadGa] = useState(false)
+  const [loadGtm, setLoadGtm] = useState(false)
   const toggleNav = () => {
     setIsMenuOpen(!isNavOpen)
   }
 
   useEffect(() => {
     if (process.env.NODE_ENV == 'development') return;
-
-    if(cookies.google_analytics) ( ReactGA.initialize(process.env.REACT_APP_GA_ID))
-    if(cookies.google_tagmanager) ( TagManager.initialize({
-      gtmId: process.env.REACT_APP_GTM_ID
-  }))
+    if(cookies.google_analytics) {
+      ReactGA.initialize(process.env.GATSBY_GA_ID)
+      setLoadGa(true)
+    } else if (cookies.google_tagmanager) {
+      TagManager.initialize({ gtmId: process.env.GATSBY_GTM_ID})
+      setLoadGtm(true)
+    } else return;
   }, [cookies])
 
   useEffect(() => {
-    ReactGA.pageview(location.pathname);
-    TagManager.dataLayer({
-      dataLayer: {
-        event: 'pageview',
-        pagePath: location.pathname,
-        pageTitle: title,
-      },
-    })
-  }, [location.href])
+    if (process.env.NODE_ENV == 'development') return;
+    if (loadGa) {
+      ReactGA.pageview(location.pathname)
+    } else if (loadGtm) {
+      TagManager.dataLayer({
+        dataLayer: {
+          event: 'pageview',
+          pagePath: location.pathname,
+          pageTitle: title,
+        },
+      })
+    } else return;
+  }, [location])
 
   useEffect(() => {
     const timeout = setTimeout(() => {

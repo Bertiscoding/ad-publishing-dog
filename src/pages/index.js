@@ -2,7 +2,7 @@ import React from "react"
 import HomePage from "../components/HomePage"
 import "../styles/style.scss"
 import { CookiesProvider } from "react-cookie"
-import { Seo } from "../components/seo"
+// import { Seo } from "../components/Seo"
 
 const IndexPage = () => {  
   return (
@@ -14,6 +14,6 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head = () => (
-  <Seo />
-)
+// export const Head = () => (
+//   <Seo />
+// )

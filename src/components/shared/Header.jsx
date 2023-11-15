@@ -26,11 +26,11 @@ export default function Header() {
   useEffect(() => {
     if (process.env.NODE_ENV == 'development') return;
     if(cookies.google_analytics) {
-      ReactGA.initialize(process.env.GATSBY_GA_ID)
       setLoadGa(true)
+      ReactGA.initialize(process.env.GATSBY_GA_ID)
     } else if (cookies.google_tagmanager) {
-      TagManager.initialize({ gtmId: process.env.GATSBY_GTM_ID})
       setLoadGtm(true)
+      TagManager.initialize({ gtmId: process.env.GATSBY_GTM_ID})
     } else return;
   }, [cookies])
 
@@ -50,9 +50,25 @@ export default function Header() {
   }, [location])
 
   useEffect(() => {
+  if(loadGa) {
+    const gaScript = `   
+      <script async src="https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GA_ID}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', ${process.env.GATSBY_GA_ID});
+      </script>
+    `
+    return document.head.appendChild(gaScript)
+  }
+  },[loadGa])
+
+  useEffect(() => {
     const timeout = setTimeout(() => {
       setShowBanner(true)
-    }, 3000);
+    }, 2000);
     return () => clearTimeout(timeout)
   }, [])
 

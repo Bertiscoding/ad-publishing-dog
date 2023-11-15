@@ -1,10 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Header from "./shared/Header"
 import Footer from "./shared/Footer"
  
 
 const HomePage = () => {
+  const [sortBy, setSortBy] = useState('popular')
 
   const data = useStaticQuery(graphql`
     query {
@@ -57,7 +58,7 @@ const HomePage = () => {
   }
 
   const sectionStyle = {
-    marginTop: 40,
+    marginTop: 10,
     display: "flex",
     justifyContent: "center",
     padding: 15,
@@ -86,21 +87,26 @@ const HomePage = () => {
     const mapItems = data.posts.edges.map((item, i) => {
     const { id, slug, linkText, featuredImage } = item.node.frontmatter
     return (
-          <a id={id} href={slug} key={i} style={itemLinkStyle}>
-            <div style={itemImgStyle}>
-              <div
-                title={`easy dog training ${linkText}`}
-                style={featuredImage ? {backgroundImage: `url(${featuredImage.publicURL})`} : {backgroundColor: '#97A7B3'}}
-                className="hp-background-img"
-              >
-              </div>
-            </div>
-            <h4 style={linkTextStyle}>{linkText}</h4>
-          </a>
-        )
+      <a id={id} href={slug} key={i} style={itemLinkStyle}>
+        <div style={itemImgStyle}>
+          <div
+            title={`easy dog training ${linkText}`}
+            style={featuredImage ? {backgroundImage: `url(${featuredImage.publicURL})`} : {backgroundColor: '#97A7B3'}}
+            className="hp-background-img"
+          >
+          </div>
+        </div>
+        <h4 style={linkTextStyle}>{linkText}</h4>
+      </a>
+    )
   })
-  const sortedItems = mapItems.sort((a, b) => { 
-    return a.props.id - b.props.id
+
+  const sortedItems =  mapItems.sort((a, b) => { 
+    if (sortBy === 'popular') {
+      return a.props.id - b.props.id
+    } else {
+      return a.props.children[1].props.children.localeCompare(b.props.children[1].props.children)
+    }
   })
 
   return (
@@ -133,6 +139,12 @@ const HomePage = () => {
             Find our training-guides down below!
           </h1>
           <section id="ab-mid"></section>
+          <div className="sort-items_container">
+            <select name="sortItems" id="sortItems" defaultValue={'popular'} className="sort-items" onChange={e => setSortBy(e.target.value)}>
+              <option value="popular" >Sort by popularity</option>
+              <option value="atoz">Sort A-Z</option>
+            </select>
+          </div>
           <section style={sectionStyle}>
             <div style={sectionWrapperStyle}>
               { sortedItems }

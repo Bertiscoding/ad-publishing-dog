@@ -118,6 +118,25 @@ h2 {
   transform: translateY(-8px) rotate(-45deg);
 }
 
+.sort-items {
+  background-color: #DEFFFC;
+  border-radius: 3px;
+  width: 175px;
+  padding: 5px 10px;
+  color: #272635;
+  border: 1px solid #7E7F9A;
+  font-weight: 500;
+  font-size: 16px;
+
+  &_container {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 35px;
+  }
+}
+
 .hp-background-img,
 .lp-background-img {
   height: 100%;

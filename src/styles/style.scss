@@ -17,6 +17,15 @@ h2 {
   margin: 15px 0 5px 0;
 }
 
+  .page-container {
+    max-width: 830px;
+
+    &-wrapper {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
 .nav {
   background-color: #272635;
   width: 100vw;

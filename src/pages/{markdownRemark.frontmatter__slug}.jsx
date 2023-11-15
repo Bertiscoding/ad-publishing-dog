@@ -3,8 +3,6 @@ import { useLocation } from "@reach/router"
 import { graphql } from "gatsby"
 import Header from "../components/shared/Header"
 import Footer from "../components/shared/Footer"
-import AdBannerTop from "../components/shared/AdBannerTop"
-import AdBannerBottom from "../components/shared/AdBannerBottom"
 import Seo from "../components/Seo"
 import "../styles/style.scss"
 
@@ -50,23 +48,28 @@ export default function BlogPostTemplate({
   return (
     <>
       <Header />
-      <div style={frameWrapper}>
-        <div style={frame}>
-          <h1 style={headingH1}>{frontmatter.title}</h1>
-          <h3 style={summaryStyle}>{frontmatter.summary}</h3>
-          <p style={dateStyle}>{frontmatter.date}</p>
-          <div
-            title={frontmatter.title}
-            style={featuredImg ? {backgroundImage: `url(${featuredImg})`} : {backgroundColor: '#97A7B3'}}
-            className="lp-background-img"
-          ></div>
-          <AdBannerTop />
-          <div
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        <AdBannerBottom />
+      <section id="ab-top"></section>
+      <div className="page-container-wrapper">
+        <div id="ab-left"></div>
+        <div style={frameWrapper} className="page-container">
+          <div style={frame}>
+            <h1 style={headingH1}>{frontmatter.title}</h1>
+            <h3 style={summaryStyle}>{frontmatter.summary}</h3>
+            <p style={dateStyle}>{frontmatter.date}</p>
+            <div
+              title={frontmatter.title}
+              style={featuredImg ? {backgroundImage: `url(${featuredImg})`} : {backgroundColor: '#97A7B3'}}
+              className="lp-background-img"
+            ></div>
+            <section id="ab-mid"></section>
+            <div
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          </div>
         </div>
+        <div id="ab-right"></div>
       </div>
+      <section id="ab-bottom"></section>
       <Footer />
     </>
   )

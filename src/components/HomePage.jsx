@@ -58,7 +58,6 @@ const HomePage = () => {
 
   const sectionStyle = {
     marginTop: 40,
-    maxWidth: 830,
     display: "flex",
     justifyContent: "center",
     padding: 15,
@@ -107,14 +106,17 @@ const HomePage = () => {
   return (
     <div>
       <Header />
-      <main style={mainContainer}>
-        <div style={mainLogoLarge}>
-          <img
-            src="images/edt-logo-lg.png"
-            alt="easy dog training"
-            style={mainLogoLargeImg}
-          />
-        </div>
+      <section id="ab-top"></section>
+      <div className="page-container-wrapper">
+        <div id="ab-left"></div>
+        <main style={mainContainer} className="page-container">
+          <div style={mainLogoLarge}>
+            <img
+              src="images/edt-logo-lg.png"
+              alt="easy dog training"
+              style={mainLogoLargeImg}
+            />
+          </div>
           <h1 style={mainParagraphStyle}>
             This is your go-to hub for stress-free and effective dog training tips! Whether you're a first-time pup parent or a seasoned dog whisperer, our mission is to simplify training while keeping it fun and approachable.
             <br/>
@@ -130,12 +132,16 @@ const HomePage = () => {
             <br/>
             Find our training-guides down below!
           </h1>
-        <section style={sectionStyle}>
-          <div style={sectionWrapperStyle}>
-            { sortedItems }
-          </div>
-        </section>
-      </main>
+          <section id="ab-mid"></section>
+          <section style={sectionStyle}>
+            <div style={sectionWrapperStyle}>
+              { sortedItems }
+            </div>
+          </section>
+        </main>
+        <div id="ab-right"></div>
+      </div>
+      <section id="ab-bottom"></section>
       <Footer />
     </div>
   )

@@ -81,7 +81,7 @@ export default function Header() {
     )
   })
   const sortedItems = mapLinks.sort((a, b) => { 
-    return a.props.id - b.props.id
+    return  a.props.children.props.children.localeCompare(b.props.children.props.children)
   })
 
   return (

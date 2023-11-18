@@ -20,6 +20,7 @@ const Seo = ({ title, description, image, url, children }) => {
       <meta property="og:description" content={seo.description} />
       <meta property="og:image" content={seo.image} />
       <meta property="og:url" content={seo.url} />
+      <meta name="google-site-verification" content="-HCSRS0gcE81KKVnGBgstPQtJuiEEI0GTALmnkXViUU" />
       { children }
     </>
   )

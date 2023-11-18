@@ -7,7 +7,7 @@ const CookieBanner = () => {
 
   const [showCookieBanner, setShowCookieBanner] = useState(true)
   const [showSettings, setShowSettings] = useState(false)
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState(["essential"]);
   const [_, setCookie, removeCookie] = useCookies(["accepted"]);
 
   const saveSettings = () => {

@@ -1,6 +1,7 @@
 import React from "react"
 import { useLocation } from "@reach/router"
 import { graphql } from "gatsby"
+import { useCookies } from "react-cookie"
 import Header from "../components/shared/Header"
 import Footer from "../components/shared/Footer"
 import Seo from "../components/Seo"
@@ -12,6 +13,7 @@ export default function BlogPostTemplate({
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   let featuredImg = frontmatter.featuredImage.publicURL
+  const [cookies] = useCookies();
 
   const frameWrapper = {
     display: "flex",
@@ -48,7 +50,9 @@ export default function BlogPostTemplate({
     <>
       <Header />
       <section id="ab-top" className="ab-top-section">
-        <script src="//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=1"></script>
+        {cookies.thirdparty_ads && (
+          <script src="//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=1"></script>
+        )}
       </section>
       <div className="page-container-wrapper">
         <div id="ab-left"></div>

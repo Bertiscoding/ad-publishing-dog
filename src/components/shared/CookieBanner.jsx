@@ -18,6 +18,12 @@ const CookieBanner = () => {
       removeCookie("google_analytics", true, location)
       removeCookie("google_tagmanager", true, location)
     }
+
+    if(categories.includes("thirdpartyads")) {
+      setCookie("thirdparty_ads", true, location)
+    } else {
+      removeCookie("google_analytics", true, location)
+    }
     setCookie("accepted", true);
     setShowCookieBanner(!showCookieBanner)
   }
@@ -25,6 +31,7 @@ const CookieBanner = () => {
   const saveAllCookies = () => {
     setCookie("google_analytics", true, location)
     setCookie("google_tagmanager", true, location)
+    setCookie("thirdparty_ads", true, location)
     setCookie("accepted", true, location);
     setShowCookieBanner(!showCookieBanner)
   }
@@ -126,6 +133,10 @@ const CookieBanner = () => {
           <label htmlFor="analytics" style={selectionLabelStyle}>
             <input type="checkbox" name="analytics" id="analytics" style={selectionCheckboxStyle} onChange={handleChangeSettings} />
             Analytics
+          </label>
+          <label htmlFor="thirdpartyads" style={selectionLabelStyle}>
+            <input type="checkbox" name="thirdpartyads" id="thirdpartyads" style={selectionCheckboxStyle} onChange={handleChangeSettings} />
+            Third Party Interest
           </label>
         </div>
         <div style={buttonContainerStyle}>

@@ -1,11 +1,13 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import { useCookies } from "react-cookie"
 import Header from "./shared/Header"
 import Footer from "./shared/Footer"
  
 
 const HomePage = () => {
   const [sortBy, setSortBy] = useState('popular')
+  const [cookies] = useCookies();
 
   const data = useStaticQuery(graphql`
     query {
@@ -112,7 +114,9 @@ const HomePage = () => {
     <div>
       <Header />
       <section id="ab-top" className="ab-top-section">
-        <script src="//servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=1"></script>
+        {cookies.thirdparty_ads && (
+            <script src="//servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=1"></script>
+        )}
       </section>
       <div className="page-container-wrapper">
         <div id="ab-left"></div>

@@ -19,6 +19,7 @@ export default function Header() {
   const [isNavOpen, setIsMenuOpen] = useState(false)
   const [loadGa, setLoadGa] = useState(false)
   const [loadGtm, setLoadGtm] = useState(false)
+  const [loadEzoic, setLoadEzoic] = useState(false)
   const toggleNav = () => {
     setIsMenuOpen(!isNavOpen)
   }
@@ -31,6 +32,8 @@ export default function Header() {
     } else if (cookies.google_tagmanager) {
       setLoadGtm(true)
       TagManager.initialize({ gtmId: process.env.GATSBY_GTM_ID})
+    } else if (cookies.thirdparty_ads){
+      setLoadEzoic(true)
     } else return;
   }, [cookies])
 
@@ -112,7 +115,21 @@ export default function Header() {
       document.body.appendChild(bodyScript);
     }
   }, [loadGtm]);
-  
+
+  useEffect(() => {
+    if (loadEzoic) {
+      const scriptElement = document.createElement("script");
+      scriptElement.innerHTML = `
+        if (typeof ezConsentCategories == 'object' && typeof __ezconsent == 'object') {
+          window.ezConsentCategories.preferences = true;
+          window.ezConsentCategories.statistics = true;
+          window.ezConsentCategories.marketing = false;
+          __ezconsent.setEzoicConsentSettings(window.ezConsentCategories);
+        }
+      `;
+      document.head.appendChild(scriptElement);
+    }
+  }, [loadEzoic])
 
   useEffect(() => {
     if ((!cookies.accepted && process.env.NODE_ENV !== 'development')) {

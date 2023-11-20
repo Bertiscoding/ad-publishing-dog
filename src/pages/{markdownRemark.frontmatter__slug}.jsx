@@ -18,7 +18,6 @@ export default function BlogPostTemplate({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: 30,
   }
 
   const frame = {
@@ -48,7 +47,9 @@ export default function BlogPostTemplate({
   return (
     <>
       <Header />
-      <section id="ab-top"></section>
+      <section id="ab-top" className="ab-top-section">
+        <script src="//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=1"></script>
+      </section>
       <div className="page-container-wrapper">
         <div id="ab-left"></div>
         <div style={frameWrapper} className="page-container">

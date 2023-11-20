@@ -19,34 +19,46 @@ export default function Header() {
   const [isNavOpen, setIsMenuOpen] = useState(false)
   const [loadGa, setLoadGa] = useState(false)
   const [loadGtm, setLoadGtm] = useState(false)
+  const [loadEzoic, setLoadEzoic] = useState(false)
   const toggleNav = () => {
     setIsMenuOpen(!isNavOpen)
   }
 
   useEffect(() => {
-    if (process.env.NODE_ENV == 'development') return;
-    if(cookies.google_analytics) {
-      setLoadGa(true)
-      ReactGA.initialize(process.env.GATSBY_GA_ID)
-    } else if (cookies.google_tagmanager) {
-      setLoadGtm(true)
-      TagManager.initialize({ gtmId: process.env.GATSBY_GTM_ID})
-    } else return;
+    if (process.env.NODE_ENV === 'development') {
+      return;
+    } else {
+      if(cookies.google_analytics) {
+        setLoadGa(true)
+        ReactGA.initialize(process.env.GATSBY_GA_ID)
+      }
+      if (cookies.google_tagmanager) {
+        setLoadGtm(true)
+        TagManager.initialize({ gtmId: process.env.GATSBY_GTM_ID})
+      }
+      if (cookies.thirdparty_ads){
+        setLoadEzoic(true)
+      }
+    }
   }, [cookies])
 
   useEffect(() => {
-    if (process.env.NODE_ENV == 'development') return;
-    if (loadGa) {
-      ReactGA.pageview(location.pathname)
-    } else if (loadGtm) {
-      TagManager.dataLayer({
-        dataLayer: {
-          event: 'pageview',
-          pagePath: location.pathname,
-          pageTitle: title,
-        },
-      })
-    } else return;
+    if (process.env.NODE_ENV === 'development'){
+      return;
+    } else {
+      if (loadGa) {
+        ReactGA.pageview(location.pathname)
+      }
+      if (loadGtm) {
+        TagManager.dataLayer({
+          dataLayer: {
+            event: 'pageview',
+            pagePath: location.pathname,
+            pageTitle: title,
+          },
+        })
+      }
+    }
   }, [location])
 
   useEffect(() => {
@@ -112,7 +124,31 @@ export default function Header() {
       document.body.appendChild(bodyScript);
     }
   }, [loadGtm]);
-  
+
+  useEffect(() => {
+    if (loadEzoic) {
+      window.ezConsentCategories = window.ezConsentCategories || {};
+      window.__ezconsent = window.__ezconsent || {};
+
+      window.ezConsentCategories.preferences = true;
+      window.ezConsentCategories.statistics = true;
+      window.ezConsentCategories.marketing = true;
+
+      const scriptElement = document.createElement("script");
+      scriptElement.innerHTML = `
+        if (typeof ezConsentCategories == 'object' && typeof __ezconsent == 'object') {
+          window.ezConsentCategories.preferences = true;
+          window.ezConsentCategories.statistics = true;
+          window.ezConsentCategories.marketing = true;
+
+          if(typeof __ezconsent.setEzoicConsentSettings === 'function') {
+            __ezconsent.setEzoicConsentSettings(window.ezConsentCategories);
+          }
+        }
+      `;
+      document.head.appendChild(scriptElement);
+    }
+  }, [loadEzoic])
 
   useEffect(() => {
     if ((!cookies.accepted && process.env.NODE_ENV !== 'development')) {
@@ -155,7 +191,7 @@ export default function Header() {
   return (
     <>
     {cookies.thirdparty_ads && (
-       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5251463929015203" crossorigin="anonymous"></script>
+       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5251463929015203" crossOrigin="anonymous"></script>
     )}
       <nav className="nav">
         <div className="nav-wrapper">

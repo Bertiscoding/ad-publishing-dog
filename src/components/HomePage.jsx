@@ -28,7 +28,6 @@ const HomePage = () => {
 
   const mainContainer = {
     minHeight: "100vh",
-    paddingTop: 40,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -112,7 +111,9 @@ const HomePage = () => {
   return (
     <div>
       <Header />
-      <section id="ab-top"></section>
+      <section id="ab-top" className="ab-top-section">
+        <script src="//servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=1"></script>
+      </section>
       <div className="page-container-wrapper">
         <div id="ab-left"></div>
         <main style={mainContainer} className="page-container">

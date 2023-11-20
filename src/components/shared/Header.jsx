@@ -154,6 +154,9 @@ export default function Header() {
 
   return (
     <>
+    {cookies.thirdparty_ads && (
+       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5251463929015203" crossorigin="anonymous"></script>
+    )}
       <nav className="nav">
         <div className="nav-wrapper">
         <a href="/" className="nav-logo">

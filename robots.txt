@@ -1,0 +1,14 @@
+User-agent: *
+Sitemap: https://easy-dog-training.com/sitemap.xml
+Disallow: /imprint/
+Disallow: /dataprotection/
+Disallow: /static/
+Disallow: /search/
+Disallow: /tag/
+Disallow: /category/
+Disallow: /author/
+Disallow: /page/
+Disallow: /archives/
+Disallow: /404/
+Disallow: /500/
+Disallow: /tags/

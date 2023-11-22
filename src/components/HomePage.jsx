@@ -115,13 +115,17 @@ const HomePage = () => {
   return (
     <div>
       <Header />
-      <section id="ab-top" className="ab-top-section">
-        {cookies.thirdparty_ads && (
-            <script src="//servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=1"></script>
-        )}
-      </section>
+      {cookies.thirdparty_ads && (
+        <section id="ab-top" className="ab-top-section">
+          <script src="//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=900"></script>
+        </section>
+      )}
       <div className="page-container-wrapper">
-        <div id="ab-left"></div>
+        {cookies.thirdparty_ads && (
+          <section id="ab-left" className="ab-left-section">
+            <div id="ezoic-pub-ad-placeholder-106"> </div>
+          </section>
+        )}
         <main style={mainContainer} className="page-container">
           <div style={mainLogoLarge}>
             <img
@@ -145,7 +149,11 @@ const HomePage = () => {
             <br/>
             Find our training-guides down below!
           </h1>
-          <section id="ab-mid"></section>
+          {cookies.thirdparty_ads && (
+            <section id="ab-mid" className="ab-mid-section">
+              <div id="ezoic-pub-ad-placeholder-105"></div>
+            </section>
+          )}
           <div className="sort-items_container">
             <select name="sortItems" id="sortItems" defaultValue={'popular'} className="sort-items" onChange={e => setSortBy(e.target.value)}>
               <option value="popular" >Sort by popularity</option>
@@ -158,9 +166,17 @@ const HomePage = () => {
             </div>
           </section>
         </main>
-        <div id="ab-right"></div>
+        {cookies.thirdparty_ads && (
+          <section id="ab-right" className="ab-right-section">
+            <div id="ezoic-pub-ad-placeholder-107"> </div>
+          </section>
+        )}
       </div>
-      <section id="ab-bottom"></section>
+      {cookies.thirdparty_ads && (
+        <section id="ab-bottom" className="ab-bottom-section">
+          <script src="//servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=900"></script>
+        </section>
+      )}
       <Footer />
     </div>
   )

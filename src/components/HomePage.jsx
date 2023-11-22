@@ -121,7 +121,7 @@ const HomePage = () => {
         </section>
       )}
       <div className="page-container-wrapper">
-        {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
+        {cookies.thirdparty_ads && (
           <section id="ab-left" className="ab-left-section">
             <div id="ezoic-pub-ad-placeholder-106"> </div>
           </section>
@@ -149,7 +149,7 @@ const HomePage = () => {
             <br/>
             Find our training-guides down below!
           </h1>
-          {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
+          {cookies.thirdparty_ads && (
             <section id="ab-mid" className="ab-mid-section">
               <div id="ezoic-pub-ad-placeholder-105"></div>
             </section>
@@ -166,7 +166,7 @@ const HomePage = () => {
             </div>
           </section>
         </main>
-        {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
+        {cookies.thirdparty_ads && (
           <section id="ab-right" className="ab-right-section">
             <div id="ezoic-pub-ad-placeholder-107"> </div>
           </section>

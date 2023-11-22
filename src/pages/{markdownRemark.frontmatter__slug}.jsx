@@ -46,18 +46,28 @@ export default function BlogPostTemplate({
     marginTop: 30,
   }
 
+  const renderAds = (id) => {
+    if (id % 2 === 0) {
+      <script src={`//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=${id}`}></script>
+    } else {
+      <script src={`//servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=${id}`}></script>
+    }
+  }
+
   return (
     <>
       <Header />
-      { (frontmatter.id !== 0) && (
+      {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
         <section id="ab-top" className="ab-top-section">
-          {cookies.thirdparty_ads && (
-            <script src="//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=1"></script>
-          )}
+          { renderAds(frontmatter.id) }
         </section>
       )}
       <div className="page-container-wrapper">
-        <div id="ab-left"></div>
+        {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
+          <section id="ab-left" className="ab-left-section">
+            <div id="ezoic-pub-ad-placeholder-106"> </div>
+          </section>
+        )}
         <div style={frameWrapper} className="page-container">
           <div style={frame}>
             <h1 style={headingH1}>{frontmatter.title}</h1>
@@ -68,17 +78,25 @@ export default function BlogPostTemplate({
               style={featuredImg ? {backgroundImage: `url(${featuredImg})`} : {backgroundColor: '#97A7B3'}}
               className="lp-background-img"
             ></div>
-            <section id="ab-mid"></section>
+            {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
+              <section id="ab-mid" className="ab-mid-section">
+                <div id="ezoic-pub-ad-placeholder-105"></div>
+              </section>
+              )}
             <div
               dangerouslySetInnerHTML={{ __html: html }}
             />
           </div>
         </div>
-        <div id="ab-right"></div>
+        {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
+          <section id="ab-right" className="ab-right-section">
+            <div id="ezoic-pub-ad-placeholder-107"> </div>
+          </section>
+        )}
       </div>
-      { (frontmatter.id !== 0) && (
-        <section id="ab-bottom">
-          <div id="ezoic-pub-ad-placeholder-104"></div>
+      {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
+        <section id="ab-bottom" className="ab-bottom-section">
+          { renderAds(frontmatter.id) }
         </section>
       )}
       <Footer />

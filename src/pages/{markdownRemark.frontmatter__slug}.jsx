@@ -47,10 +47,11 @@ export default function BlogPostTemplate({
   }
 
   const renderAds = (id) => {
+    console.log('id % 2', id % 2);
     if (id % 2 === 0) {
-      <script src={`//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=${id}`}></script>
+      return (<script src={`//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=${id}`}></script>)
     } else {
-      <script src={`//servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=${id}`}></script>
+      return (<script src={`//servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=${id}`}></script>)
     }
   }
 

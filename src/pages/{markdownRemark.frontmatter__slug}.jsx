@@ -49,11 +49,13 @@ export default function BlogPostTemplate({
   return (
     <>
       <Header />
-      <section id="ab-top" className="ab-top-section">
-        {cookies.thirdparty_ads && (
-          <script src="//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=1"></script>
-        )}
-      </section>
+      { (frontmatter.id !== 0) && (
+        <section id="ab-top" className="ab-top-section">
+          {cookies.thirdparty_ads && (
+            <script src="//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=1"></script>
+          )}
+        </section>
+      )}
       <div className="page-container-wrapper">
         <div id="ab-left"></div>
         <div style={frameWrapper} className="page-container">
@@ -74,7 +76,11 @@ export default function BlogPostTemplate({
         </div>
         <div id="ab-right"></div>
       </div>
-      <section id="ab-bottom"></section>
+      { (frontmatter.id !== 0) && (
+        <section id="ab-bottom">
+          <div id="ezoic-pub-ad-placeholder-104"></div>
+        </section>
+      )}
       <Footer />
     </>
   )

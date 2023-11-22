@@ -178,11 +178,13 @@ export default function Header() {
 
   const mapLinks = navLinks.posts.edges.map((el, i) => {
     const {id, slug, linkText} = el.node.frontmatter
-    return (
-      <li id={id} className="nav-item" key={i}>
-        <a href={slug} className="nav-link">{linkText}</a>
-      </li>
-    )
+    if (id !== 0) {
+      return (
+        <li id={id} className="nav-item" key={i}>
+          <a href={slug} className="nav-link">{linkText}</a>
+        </li>
+      )
+    }
   })
   const sortedItems = mapLinks.sort((a, b) => { 
     return  a.props.children.props.children.localeCompare(b.props.children.props.children)

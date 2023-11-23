@@ -75,7 +75,7 @@ const HomePage = () => {
   const itemLinkStyle = {
     textDecoration: "none",
     margin: "15px 5px",
-    width: 160,
+    width: 150,
   }
 
   const linkTextStyle = {
@@ -152,7 +152,8 @@ const HomePage = () => {
             Find our training-guides down below!
           </h1>
           {cookies.thirdparty_ads && (
-            <center id="ab-mid" className="ab-mid-section">
+            // <center id="ab-mid" className="ab-mid-section">
+            <center id="ab-mid">
               <script src="//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=900"></script>
             </center>
           )}

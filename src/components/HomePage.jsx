@@ -116,9 +116,9 @@ const HomePage = () => {
     <div>
       <Header />
       {cookies.thirdparty_ads && (
-        <section id="ab-top" className="ab-top-section">
-          <script src="//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=900"></script>
-        </section>
+        <center id="ab-top" className="ab-top-section">
+          <div id="ezoic-pub-ad-placeholder-103"> </div>
+        </center>
       )}
       <div className="page-container-wrapper">
         {cookies.thirdparty_ads && (
@@ -150,9 +150,9 @@ const HomePage = () => {
             Find our training-guides down below!
           </h1>
           {cookies.thirdparty_ads && (
-            <section id="ab-mid" className="ab-mid-section">
-              <div id="ezoic-pub-ad-placeholder-105"></div>
-            </section>
+            <center id="ab-mid" className="ab-mid-section">
+              <script src="//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=900"></script>
+            </center>
           )}
           <div className="sort-items_container">
             <select name="sortItems" id="sortItems" defaultValue={'popular'} className="sort-items" onChange={e => setSortBy(e.target.value)}>
@@ -167,15 +167,15 @@ const HomePage = () => {
           </section>
         </main>
         {cookies.thirdparty_ads && (
-          <section id="ab-right" className="ab-right-section">
-            <div id="ezoic-pub-ad-placeholder-107"> </div>
-          </section>
+          <center id="ab-right" className="ab-right-section">
+            <div id="ezoic-pub-ad-placeholder-107"></div>
+          </center>
         )}
       </div>
       {cookies.thirdparty_ads && (
-        <section id="ab-bottom" className="ab-bottom-section">
+        <center id="ab-bottom" className="ab-bottom-section">
           <script src="//servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=900"></script>
-        </section>
+        </center>
       )}
       <Footer />
     </div>

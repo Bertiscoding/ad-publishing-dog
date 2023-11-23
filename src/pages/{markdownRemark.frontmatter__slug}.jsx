@@ -58,9 +58,9 @@ export default function BlogPostTemplate({
     <>
       <Header />
       {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
-        <section id="ab-top" className="ab-top-section">
-          { renderAds(frontmatter.id) }
-        </section>
+        <center id="ab-top" className="ab-top-section">
+          <div id="ezoic-pub-ad-placeholder-103"> </div>
+        </center>
       )}
       <div className="page-container-wrapper">
         {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
@@ -79,10 +79,10 @@ export default function BlogPostTemplate({
               className="lp-background-img"
             ></div>
             {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
-              <section id="ab-mid" className="ab-mid-section">
-                <div id="ezoic-pub-ad-placeholder-105"></div>
-              </section>
-              )}
+              <center id="ab-mid" className="ab-mid-section">
+                { renderAds(frontmatter.id) }
+              </center>
+            )}
             <div
               dangerouslySetInnerHTML={{ __html: html }}
             />
@@ -95,9 +95,9 @@ export default function BlogPostTemplate({
         )}
       </div>
       {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
-        <section id="ab-bottom" className="ab-bottom-section">
+        <center id="ab-bottom" className="ab-bottom-section">
           { renderAds(frontmatter.id) }
-        </section>
+        </center>
       )}
       <Footer />
     </>

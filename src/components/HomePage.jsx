@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { useCookies } from "react-cookie"
 import Header from "./shared/Header"
@@ -85,7 +85,7 @@ const HomePage = () => {
   }
 
 
-    const mapItems = data.posts.edges.map((item, i) => {
+  const mapItems = data.posts.edges.map((item, i) => {
     const { id, slug, linkText, featuredImage } = item.node.frontmatter
     if (id !== 0) {
       return (
@@ -116,13 +116,15 @@ const HomePage = () => {
     <div>
       <Header />
       {cookies.thirdparty_ads && (
-        <center id="ab-top" className="ab-top-section">
+        // <center id="ab-top" className="ab-top-section">
+        <center id="ab-top">
           <div id="ezoic-pub-ad-placeholder-103"> </div>
         </center>
       )}
       <div className="page-container-wrapper">
         {cookies.thirdparty_ads && (
-          <section id="ab-left" className="ab-left-section">
+          // <section id="ab-left" className="ab-left-section">
+          <section id="ab-left">
             <div id="ezoic-pub-ad-placeholder-106"> </div>
           </section>
         )}
@@ -167,7 +169,8 @@ const HomePage = () => {
           </section>
         </main>
         {cookies.thirdparty_ads && (
-          <center id="ab-right" className="ab-right-section">
+          // <center id="ab-right" className="ab-right-section">
+          <center id="ab-right">
             <div id="ezoic-pub-ad-placeholder-107"></div>
           </center>
         )}

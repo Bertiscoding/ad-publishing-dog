@@ -20,9 +20,8 @@ export default function Header() {
   const [loadGa, setLoadGa] = useState(false)
   const [loadGtm, setLoadGtm] = useState(false)
   const [loadEzoic, setLoadEzoic] = useState(false)
-  const toggleNav = () => {
-    setIsMenuOpen(!isNavOpen)
-  }
+
+  const toggleNav = () => {setIsMenuOpen(!isNavOpen)}
 
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
@@ -40,7 +39,7 @@ export default function Header() {
         setLoadEzoic(true)
       }
     }
-  }, [cookies])
+  }, [cookies.google_analytics, cookies.google_tagmanager, cookies.thirdparty_ads])
 
   useEffect(() => {
     if (process.env.NODE_ENV === 'development'){

@@ -58,13 +58,15 @@ export default function BlogPostTemplate({
     <>
       <Header />
       {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
-        <center id="ab-top" className="ab-top-section">
+        // <center id="ab-top" className="ab-top-section">
+        <center id="ab-top">
           <div id="ezoic-pub-ad-placeholder-103"> </div>
         </center>
       )}
       <div className="page-container-wrapper">
         {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
-          <section id="ab-left" className="ab-left-section">
+          // <section id="ab-left" className="ab-left-section">
+          <section id="ab-left">
             <div id="ezoic-pub-ad-placeholder-106"> </div>
           </section>
         )}
@@ -89,7 +91,8 @@ export default function BlogPostTemplate({
           </div>
         </div>
         {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
-          <section id="ab-right" className="ab-right-section">
+          // <section id="ab-right" className="ab-right-section">
+          <section id="ab-right">
             <div id="ezoic-pub-ad-placeholder-107"> </div>
           </section>
         )}

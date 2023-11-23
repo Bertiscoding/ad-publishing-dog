@@ -161,3 +161,18 @@ h2 {
 .ab-top-section {
   padding-top: 40px;
 }
+
+.ab-mid-section {
+  padding: 30px 0;
+}
+
+.ab-bottom-section {
+  padding-bottom: 30px;
+}
+
+.ab-top-section,
+.ab-mid-section,
+.ab-bottom-section {
+  width: 100%;
+  height: auto;
+}

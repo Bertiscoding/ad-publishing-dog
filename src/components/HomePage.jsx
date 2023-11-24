@@ -123,14 +123,14 @@ const HomePage = () => {
   return (
     <div>
       <Header />
-      {!cookies.thirdparty_ads && (
+      {cookies.thirdparty_ads && (
         // <center id="ab-top" className="ab-top-section">
         <center id="ab-top">
           <div id="ezoic-pub-ad-placeholder-103"> </div>
         </center>
       )}
       <div className="page-container-wrapper">
-        {!cookies.thirdparty_ads && (
+        {cookies.thirdparty_ads && (
           // <section id="ab-left" className="ab-left-section">
           <section id="ab-left">
             <div id="ezoic-pub-ad-placeholder-106"> </div>
@@ -159,7 +159,7 @@ const HomePage = () => {
             <br/>
             Find our training-guides down below!
           </h1>
-          {(!cookies.thirdparty_ads && showAdScript) && (
+          {(cookies.thirdparty_ads && showAdScript) && (
             // <center id="ab-mid" className="ab-mid-section">
             <center id="ab-mid">
               <script src="https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=900"></script>
@@ -177,14 +177,14 @@ const HomePage = () => {
             </div>
           </section>
         </main>
-        {!cookies.thirdparty_ads && (
+        {cookies.thirdparty_ads && (
           // <center id="ab-right" className="ab-right-section">
           <center id="ab-right">
             <div id="ezoic-pub-ad-placeholder-107"></div>
           </center>
         )}
       </div>
-      {!(cookies.thirdparty_ads && showAdScript) && (
+      {(cookies.thirdparty_ads && showAdScript) && (
         <center id="ab-bottom" className="ab-bottom-section">
           <script src="https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=900"></script>
         </center>

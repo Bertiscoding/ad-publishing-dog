@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { useLocation } from "@reach/router"
 import { graphql } from "gatsby"
 import { useCookies } from "react-cookie"
@@ -14,6 +14,7 @@ export default function BlogPostTemplate({
   const { frontmatter, html } = markdownRemark
   let featuredImg = frontmatter.featuredImage.publicURL
   const [cookies] = useCookies();
+  const [showAdScript, setShowAdScript] = useState(null);
 
   const frameWrapper = {
     display: "flex",
@@ -32,7 +33,7 @@ export default function BlogPostTemplate({
     color: "#EB9486",
     fontSize: 32,
     fontWeight: 600,
-    marginTop: 30,
+    marginTop: 40,
   }
 
   const dateStyle = {
@@ -47,24 +48,39 @@ export default function BlogPostTemplate({
   }
 
   const renderAds = (id) => {
-    if (id % 2 === 0) {
-      return (<script src={`//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=${id}`}></script>)
-    } else {
-      return (<script src={`//servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=${id}`}></script>)
-    }
-  }
+    const timeout = setTimeout(() => {
+      if (id % 2 === 0) {
+        setShowAdScript(<script src={`https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=${id}`}></script>);
+      } else {
+        setShowAdScript(<script src={`https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=${id}`}></script>);
+      }
+    }, 2700);
+
+    return () => clearTimeout(timeout);
+  };
+
+  useEffect(() => {
+    renderAds(frontmatter.id);
+  }, []);
+
+  const renderShowAds = showAdScript ? (
+    // <center id="ab-mid" className="ab-mid-section">
+    <center id="ab-mid">
+      {showAdScript}
+    </center>
+  ) : null
 
   return (
     <>
       <Header />
-      {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
+      {(cookies.thirdparty_ads && frontmatter.id !== 0) && (
         // <center id="ab-top" className="ab-top-section">
         <center id="ab-top">
           <div id="ezoic-pub-ad-placeholder-103"> </div>
         </center>
       )}
       <div className="page-container-wrapper">
-        {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
+        {(cookies.thirdparty_ads && frontmatter.id !== 0) && (
           // <section id="ab-left" className="ab-left-section">
           <section id="ab-left">
             <div id="ezoic-pub-ad-placeholder-106"> </div>
@@ -80,28 +96,20 @@ export default function BlogPostTemplate({
               style={featuredImg ? {backgroundImage: `url(${featuredImg})`} : {backgroundColor: '#97A7B3'}}
               className="lp-background-img"
             ></div>
-            {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
-              <center id="ab-mid" className="ab-mid-section">
-                { renderAds(frontmatter.id) }
-              </center>
-            )}
+            {(cookies.thirdparty_ads && frontmatter.id !== 0) && ( renderShowAds )}
             <div
               dangerouslySetInnerHTML={{ __html: html }}
             />
           </div>
         </div>
-        {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
+        {(cookies.thirdparty_ads && frontmatter.id !== 0) && (
           // <section id="ab-right" className="ab-right-section">
           <section id="ab-right">
             <div id="ezoic-pub-ad-placeholder-107"> </div>
           </section>
         )}
       </div>
-      {(cookies.thirdparty_ads || frontmatter.id !== 0) && (
-        <center id="ab-bottom" className="ab-bottom-section">
-          { renderAds(frontmatter.id) }
-        </center>
-      )}
+      {(cookies.thirdparty_ads && frontmatter.id !== 0) && ( renderShowAds )}
       <Footer />
     </>
   )

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { useCookies } from "react-cookie"
 import Header from "./shared/Header"
@@ -7,6 +7,7 @@ import Footer from "./shared/Footer"
 
 const HomePage = () => {
   const [sortBy, setSortBy] = useState('popular')
+  const [showAdScript, setShowAdScript] = useState(null);
   const [cookies] = useCookies();
 
   const data = useStaticQuery(graphql`
@@ -28,16 +29,24 @@ const HomePage = () => {
     }
   `);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowAdScript(true);
+    }, 2700);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   const mainContainer = {
     minHeight: "100vh",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    marginTop: 60,
   }
   const mainLogoLarge = {
     width: 200,
     height: "auto",
-    marginTop: 30,
   }
   const mainLogoLargeImg = {
     width: "100%",
@@ -50,7 +59,6 @@ const HomePage = () => {
     padding: 15,
     maxWidth: 830,
     lineHeight: 1.3,
-    marginTop: 15
   }
 
   const itemImgStyle = {
@@ -115,14 +123,14 @@ const HomePage = () => {
   return (
     <div>
       <Header />
-      {cookies.thirdparty_ads && (
+      {!cookies.thirdparty_ads && (
         // <center id="ab-top" className="ab-top-section">
         <center id="ab-top">
           <div id="ezoic-pub-ad-placeholder-103"> </div>
         </center>
       )}
       <div className="page-container-wrapper">
-        {cookies.thirdparty_ads && (
+        {!cookies.thirdparty_ads && (
           // <section id="ab-left" className="ab-left-section">
           <section id="ab-left">
             <div id="ezoic-pub-ad-placeholder-106"> </div>
@@ -151,10 +159,10 @@ const HomePage = () => {
             <br/>
             Find our training-guides down below!
           </h1>
-          {cookies.thirdparty_ads && (
+          {(!cookies.thirdparty_ads && showAdScript) && (
             // <center id="ab-mid" className="ab-mid-section">
             <center id="ab-mid">
-              <script src="//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=900"></script>
+              <script src="https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=900"></script>
             </center>
           )}
           <div className="sort-items_container">
@@ -169,16 +177,16 @@ const HomePage = () => {
             </div>
           </section>
         </main>
-        {cookies.thirdparty_ads && (
+        {!cookies.thirdparty_ads && (
           // <center id="ab-right" className="ab-right-section">
           <center id="ab-right">
             <div id="ezoic-pub-ad-placeholder-107"></div>
           </center>
         )}
       </div>
-      {cookies.thirdparty_ads && (
+      {!(cookies.thirdparty_ads && showAdScript) && (
         <center id="ab-bottom" className="ab-bottom-section">
-          <script src="//servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=900"></script>
+          <script src="https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=900"></script>
         </center>
       )}
       <Footer />

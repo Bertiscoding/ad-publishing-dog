@@ -33,7 +33,7 @@ Labradors are sociable dogs, and early socialization is key to preventing behavi
 
 Labradors excel in obedience training due to their intelligence and eagerness to please. Consider enrolling your dog in a basic obedience class or work with a professional trainer. Positive reinforcement techniques, such as clicker training, can be highly effective. Focus on reinforcing good behavior rather than punishing bad behavior. Labradors thrive on positive attention and will quickly learn what earns them rewards.
 
-## Channeling Energy: Mental and Physical Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Labradors are a high-energy breed, and providing both mental and physical exercise is crucial for a well-behaved dog. Regular walks, play sessions, and puzzle toys can help burn off excess energy. Labradors also excel in activities like agility, fetch, and even water-based sports due to their love of water. A tired Labrador is a well-behaved Labrador, so make sure to incorporate enough exercise into their routine.
 

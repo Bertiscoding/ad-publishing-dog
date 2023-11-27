@@ -33,6 +33,6 @@ Yorkies are naturally confident, making early socialization vital. Introduce the
 
 Despite their small stature, Yorkies are eager to please. Utilize positive reinforcement techniques for obedience commands. Consider basic obedience classes or professional trainers for reliable responses.
 
-## Channeling Energy: Playful Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Yorkies are energetic and love to play. Regular playtime, interactive toys, and games like fetch are essential for

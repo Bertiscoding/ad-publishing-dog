@@ -33,7 +33,7 @@ Expose your Border Collie to diverse people, environments, and other pets early 
 
 As your Border Collie matures, progress to advanced obedience commands. Challenge their intellect with commands like 'fetch' or 'find.' Mental stimulation is vital for this highly intelligent breed. Make training sessions varied to keep them engaged and responsive.
 
-## Channeling Energy Through Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Border Collies are known for their boundless energy. Incorporate daily exercise routines—running, agility, or interactive play. A well-exercised Border Collie is more likely to focus during training sessions and less prone to developing behavioral issues.
 

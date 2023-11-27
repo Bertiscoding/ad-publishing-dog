@@ -29,7 +29,7 @@ Socializing your Bernese Mountain Dog is crucial for their well-rounded developm
 
 Move beyond basic commands to instill good manners. Teach your Bernese Mountain Dog to wait patiently, greet guests politely, and avoid jumping. Consistent reinforcement creates a well-mannered companion, ensuring harmonious interactions with family and friends.
 
-## Channeling Energy Through Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Bernese Mountain Dogs are energetic, requiring regular exercise to maintain their physical and mental well-being. Engage in activities like hiking, interactive play, and even gentle agility training. Meeting their energy needs not only keeps them healthy but also strengthens the bond between you.
 

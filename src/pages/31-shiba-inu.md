@@ -33,7 +33,7 @@ Expose your Shiba Inu to various environments, people, and other pets early on. 
 
 Advance to more complex obedience commands as your Shiba matures. Commands like 'leave it' and 'wait' enhance safety and control. Consistent, varied training sessions cater to their intelligent nature, keeping them stimulated and responsive.
 
-## Channeling Energy Through Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Shiba Inus are energetic, requiring regular exercise. Incorporate daily activities like brisk walks and mentally stimulating games. Channeling their energy positively ensures a focused and content Shiba Inu.
 

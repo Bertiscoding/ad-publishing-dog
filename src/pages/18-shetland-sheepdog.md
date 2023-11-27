@@ -29,7 +29,7 @@ Expose your Sheltie to diverse environments, people, and animals early on. Socia
 
 Move beyond basics to obedience training. Teach commands like heel, leave it, and down. Consistent reinforcement reinforces good behavior and cultivates a responsive, well-mannered Sheltie.
 
-## Channeling Energy Through Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Shelties are active—regular exercise is crucial. Daily walks, play, and mental stimulation prevent boredom and undesirable behaviors. Tailor activities to your Sheltie's energy level and interests.
 

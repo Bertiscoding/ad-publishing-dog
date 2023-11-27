@@ -29,7 +29,7 @@ Expose your Miniature Schnauzer to various environments, people, and other anima
 
 Move beyond basic commands and focus on obedience training. Teach your Schnauzer to respond to commands like stay, heel, and leave it. Consistency is crucial—reinforce positive behavior and correct undesirable actions promptly.
 
-## Channeling Energy Through Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Schnauzers have energy to spare, and regular exercise is vital for their physical and mental well-being. Take them for daily walks, engage in interactive play, or even consider agility training. A tired Schnauzer is a well-behaved Schnauzer, so channel that energy into positive activities.
 

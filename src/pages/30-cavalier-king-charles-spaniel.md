@@ -33,7 +33,7 @@ Expose your Cavalier King Charles Spaniel to various environments, people, and o
 
 Advance to more complex obedience commands as your Cavalier matures. Commands like 'leave it' and 'wait' enhance safety and control. Consistent, varied training sessions cater to their intelligent nature, keeping them stimulated and responsive.
 
-## Channeling Energy Through Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Despite their elegant appearance, Cavaliers benefit from regular exercise. Incorporate daily activities like short walks and play sessions. While they may not be as energetic as larger breeds, exercise contributes to a healthy and content Cavalier.
 

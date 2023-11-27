@@ -10,6 +10,8 @@ const HomePage = () => {
   const [cookies] = useCookies();
   const scriptContainerOneRef = useRef();
   const scriptContainerTwoRef = useRef();
+  const scriptContainerThreeRef = useRef();
+  const scriptContainerFourRef = useRef();
 
   const data = useStaticQuery(graphql`
     query {
@@ -33,13 +35,23 @@ const HomePage = () => {
   useLayoutEffect(() => {
     const scriptElementOne = document.createElement('script');
     const scriptElementTwo = document.createElement('script');
+    const scriptElementThree = document.createElement('script');
+    const scriptElementFour = document.createElement('script');
     scriptElementOne.src = `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=900`;
     scriptElementTwo.src = `https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=900`;
+    scriptElementThree.src = `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwNDM7c3F1YXJlLnNxdWFyZV9ib3g=&index=901`;
+    scriptElementFour.src = `https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2OTM7c3F1YXJlLnNxdWFyZV9ib3g=&index=901`;
+
     scriptElementOne.async = true;
     scriptElementTwo.async = true;
+    scriptElementThree.async = true;
+    scriptElementFour.async = true;
+
 
     const containerOne = scriptContainerOneRef.current;
     const containerTwo = scriptContainerTwoRef.current;
+    const containerThree = scriptContainerThreeRef.current;
+    const containerFour = scriptContainerFourRef.current;
 
     if (containerOne && cookies.thirdparty_ads) {
       containerOne.appendChild(scriptElementOne);
@@ -47,7 +59,13 @@ const HomePage = () => {
     if (containerTwo && cookies.thirdparty_ads) {
       containerTwo.appendChild(scriptElementTwo)
     }
-  }, [scriptContainerOneRef, scriptContainerTwoRef, cookies.thirdparty_ads]);
+    if (containerThree && cookies.thirdparty_ads) {
+      containerThree.appendChild(scriptElementThree)
+    }
+    if (containerFour && cookies.thirdparty_ads) {
+      containerFour.appendChild(scriptElementFour)
+    }
+  }, [scriptContainerOneRef, scriptContainerTwoRef, scriptContainerThreeRef, scriptContainerFourRef,  cookies.thirdparty_ads]);
 
 
   const mainContainer = {
@@ -150,6 +168,9 @@ const HomePage = () => {
           </section>
         )}
         <main style={mainContainer} className="page-container">
+          { cookies.thirdparty_ads && (
+            <center id="ab-mid" className="ab-mid-section" ref={scriptContainerFourRef}></center>
+          )}
           <div style={mainLogoLarge}>
             <img
               src="images/edt-logo-lg.png"
@@ -163,6 +184,9 @@ const HomePage = () => {
             <br/>
             At easy-dog-training.com, we understand the importance of creating a harmonious bond between you and your furry friend through simple and practical techniques. From basic commands to impressive tricks, our dog training guides are tailored to every skill level, ensuring that you and your pup become a dream team in no time.
             <br/>
+            { cookies.thirdparty_ads && (
+              <center id="ab-mid" className="ab-mid-section" ref={scriptContainerThreeRef}></center>
+            )}
             <br/>
             Forget the complex methods; we're all about user-friendly, paws-itively effective strategies. Our approach not only helps your dog learn but also enhances your own experience.
             <br/>

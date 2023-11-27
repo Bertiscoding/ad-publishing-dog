@@ -34,7 +34,7 @@ Expose your Australian Cattle Dog to various environments, people, and other pet
 
 Advance to more complex obedience commands as your Australian Cattle Dog matures. Commands like 'leave it' and 'wait' enhance safety and control. Consistent, varied training sessions cater to their intelligent nature, keeping them stimulated and responsive.
 
-## Channeling Energy Through Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Australian Cattle Dogs are known for their boundless energy. Incorporate daily exercise routines, such as vigorous walks, runs, or engaging play sessions. Channeling their energy positively ensures a focused and content Australian Cattle Dog.
 

@@ -33,7 +33,7 @@ French Bulldogs are known for their friendly and sociable nature. Early socializ
 
 While French Bulldogs may have a playful and independent streak, they are generally eager to please. Engage in positive reinforcement techniques to teach obedience commands. Consider enrolling in a basic obedience class or working with a professional trainer to ensure your Frenchie understands and follows essential commands reliably.
 
-## Channeling Energy: Playful Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 French Bulldogs are lively and love to play. Regular playtime is essential for both physical and mental exercise. Interactive toys, short walks, and games like fetch can help burn off excess energy. Be mindful of their small size and avoid overly strenuous activities. A tired Frenchie is a happy and well-behaved Frenchie.
 

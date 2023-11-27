@@ -33,7 +33,7 @@ Expose your Pug to diverse environments, people, and other pets early on. Social
 
 Progress to advanced obedience commands as your Pug matures. Commands like 'leave it' and 'wait' enhance safety and control. Consistent, varied training sessions cater to their intelligent nature, keeping them stimulated and responsive.
 
-## Channeling Energy Through Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Pugs may have a laid-back attitude, but regular exercise is essential. Incorporate daily activities like short walks and play sessions to prevent weight gain and maintain their overall health. A well-exercised Pug is more likely to focus during training.
 

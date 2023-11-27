@@ -33,7 +33,7 @@ Socialization is vital for Poodles to ensure they grow into well-mannered and co
 
 Despite their playful nature, Poodles are eager to please. Utilize positive reinforcement techniques to teach obedience commands. Consider enrolling in a basic obedience class or working with a professional trainer to ensure your Poodle understands and follows essential commands reliably.
 
-## Channeling Energy: Playful Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Poodles are energetic and love to play. Regular playtime, interactive toys, and games like fetch are essential for physical and mental exercise. Be mindful of their size and energy levels, adapting activities to suit their needs.
 

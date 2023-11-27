@@ -33,7 +33,7 @@ Huskies are social dogs, and early socialization is vital. Expose your puppy to 
 
 Huskies, with their intelligence, benefit greatly from obedience training. Consider enrolling your dog in a basic obedience class or working with a professional trainer. Positive reinforcement techniques, such as clicker training, can be highly effective. Focus on rewarding good behavior rather than punishing bad behavior. Huskies thrive on positive attention and quickly grasp what earns them rewards.
 
-## Channeling Energy: Mental and Physical Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Given their high energy levels, providing both mental and physical exercise is crucial for Huskies. Regular walks, engaging play sessions, and puzzle toys can help burn excess energy. Activities like agility and even pulling sleds can tap into their natural instincts. A well-exercised Husky is more likely to be well-behaved.
 

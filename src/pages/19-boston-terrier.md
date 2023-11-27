@@ -29,7 +29,7 @@ Expose your Boston Terrier to various environments, people, and other pets early
 
 Building on basic commands, obedience training reinforces good behavior and strengthens the bond between you and your Boston Terrier. Use positive reinforcement to reward desired actions and correct undesirable ones with a firm but gentle tone. Consistent communication is key to a well-behaved Boston Terrier.
 
-## Channeling Energy Through Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Boston Terriers are energetic little bundles, and channeling that energy through regular exercise is crucial. Play fetch, go for brisk walks, or engage in interactive games to keep them physically and mentally stimulated. A tired Boston Terrier is a well-behaved one.
 

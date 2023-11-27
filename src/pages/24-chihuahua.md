@@ -33,7 +33,7 @@ Expose your Chihuahua to various environments, people, and other pets early on. 
 
 As your Chihuahua matures, advance to more complex commands. Focus on commands that enhance their safety and your control, like 'leave it' and 'stay.' Short, engaging sessions with positive reinforcement maintain their interest and obedience.
 
-## Channeling Energy Through Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Chihuahuas may be small, but they have energy to burn. Incorporate daily exercise, such as indoor play and short walks. Tailor activities to their size and energy levels, ensuring a happy and content Chihuahua.
 

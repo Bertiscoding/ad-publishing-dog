@@ -1,7 +1,6 @@
 import React, { useState, useRef, useLayoutEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { useCookies } from "react-cookie"
-import { useLocation } from "@reach/router"
 import Header from "./shared/Header"
 import Footer from "./shared/Footer"
  
@@ -9,7 +8,8 @@ import Footer from "./shared/Footer"
 const HomePage = () => {
   const [sortBy, setSortBy] = useState('popular')
   const [cookies] = useCookies();
-  const scriptContainerRef = useRef();
+  const scriptContainerOneRef = useRef();
+  const scriptContainerTwoRef = useRef();
 
   const data = useStaticQuery(graphql`
     query {
@@ -31,18 +31,23 @@ const HomePage = () => {
   `);
 
   useLayoutEffect(() => {
-    const scriptElement = document.createElement('script');
-    scriptElement.src = `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=900`;
-    scriptElement.async = true;
+    const scriptElementOne = document.createElement('script');
+    const scriptElementTwo = document.createElement('script');
+    scriptElementOne.src = `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=900`;
+    scriptElementTwo.src = `https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=900`;
+    scriptElementOne.async = true;
+    scriptElementTwo.async = true;
 
-    const container = scriptContainerRef.current;
+    const containerOne = scriptContainerOneRef.current;
+    const containerTwo = scriptContainerTwoRef.current;
 
-    if (container) {
-      container.appendChild(scriptElement);
-    } else {
-      console.error("Container ref is undefined.", container);
+    if (containerOne && cookies.thirdparty_ads) {
+      containerOne.appendChild(scriptElementOne);
     }
-  }, [scriptContainerRef]);
+    if (containerTwo && cookies.thirdparty_ads) {
+      containerTwo.appendChild(scriptElementTwo)
+    }
+  }, [scriptContainerOneRef, scriptContainerTwoRef, cookies.thirdparty_ads]);
 
 
   const mainContainer = {
@@ -168,7 +173,7 @@ const HomePage = () => {
             Find our training-guides down below!
           </h1>
           { cookies.thirdparty_ads && (
-            <center id="ab-mid" className="ab-mid-section" ref={scriptContainerRef}></center>
+            <center id="ab-mid" className="ab-mid-section" ref={scriptContainerOneRef}></center>
           )}
           <div className="sort-items_container">
             <select name="sortItems" id="sortItems" defaultValue={'popular'} className="sort-items" onChange={e => setSortBy(e.target.value)}>
@@ -189,10 +194,8 @@ const HomePage = () => {
           </center>
         )}
       </div>
-      {cookies.thirdparty_ads && (
-        <center id="ab-bottom" className="ab-bottom-section">
-          <script src="https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=900"></script>
-        </center>
+      { cookies.thirdparty_ads && (
+        <center id="ab-bottom" className="ab-bottom-section" ref={scriptContainerTwoRef}></center>
       )}
       <Footer />
     </div>

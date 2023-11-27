@@ -1,6 +1,7 @@
 import React, { useRef, useLayoutEffect } from "react"
 import { useLocation } from "@reach/router"
 import { graphql } from "gatsby"
+import ReactDOMServer from 'react-dom/server';
 import { useCookies } from "react-cookie"
 import Header from "../components/shared/Header"
 import Footer from "../components/shared/Footer"
@@ -78,17 +79,21 @@ export default function BlogPostTemplate({
       containerOne.appendChild(scriptElementOne);
     }
     if (containerTwo && cookies.thirdparty_ads) {
-      containerTwo.appendChild(scriptElementTwo)
+      containerTwo.appendChild(scriptElementTwo);
     }
     if (containerThree && cookies.thirdparty_ads) {
-      containerThree.appendChild(scriptElementThree)
+      containerThree.appendChild(scriptElementThree);
     }
     if (containerFour && cookies.thirdparty_ads) {
-      containerFour.appendChild(scriptElementFour)
+      containerFour.appendChild(scriptElementFour);
     }
-  }, [scriptContainerOneRef, scriptContainerTwoRef, scriptContainerThreeRef, scriptContainerFourRef, cookies.thirdparty_ads]);
-
-  const adScriptToInsert = cookies.thirdparty_ads && (indexId !== 0) ? `<center id="ab-bottom" className="ab-bottom-section" ref=${scriptContainerFourRef}></center>` : null;
+  }, [scriptContainerOneRef.current, scriptContainerTwoRef.current, scriptContainerThreeRef.current, scriptContainerFourRef.current, cookies.thirdparty_ads]);
+  
+  const adScriptToInsert = cookies.thirdparty_ads && (indexId !== 0) ?
+                              (ReactDOMServer.renderToStaticMarkup(
+                                <center id="ab-bottom" className="ab-bottom-section" ref={scriptContainerFourRef}></center>
+                              ))
+                            : null
 
   return (
     <>

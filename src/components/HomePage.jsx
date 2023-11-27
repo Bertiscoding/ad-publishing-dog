@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useRef, useLayoutEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { useCookies } from "react-cookie"
+import { useLocation } from "@reach/router"
 import Header from "./shared/Header"
 import Footer from "./shared/Footer"
  
 
 const HomePage = () => {
   const [sortBy, setSortBy] = useState('popular')
-  const [showAdScript, setShowAdScript] = useState(null);
   const [cookies] = useCookies();
+  const scriptContainerRef = useRef();
 
   const data = useStaticQuery(graphql`
     query {
@@ -29,13 +30,20 @@ const HomePage = () => {
     }
   `);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShowAdScript(true);
-    }, 2700);
+  useLayoutEffect(() => {
+    const scriptElement = document.createElement('script');
+    scriptElement.src = `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=900`;
+    scriptElement.async = true;
 
-    return () => clearTimeout(timeout);
-  }, []);
+    const container = scriptContainerRef.current;
+
+    if (container) {
+      container.appendChild(scriptElement);
+    } else {
+      console.error("Container ref is undefined.", container);
+    }
+  }, [scriptContainerRef]);
+
 
   const mainContainer = {
     minHeight: "100vh",
@@ -159,11 +167,8 @@ const HomePage = () => {
             <br/>
             Find our training-guides down below!
           </h1>
-          {(cookies.thirdparty_ads && showAdScript) && (
-            // <center id="ab-mid" className="ab-mid-section">
-            <center id="ab-mid">
-              <script src="https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=900"></script>
-            </center>
+          { cookies.thirdparty_ads && (
+            <center id="ab-mid" className="ab-mid-section" ref={scriptContainerRef}></center>
           )}
           <div className="sort-items_container">
             <select name="sortItems" id="sortItems" defaultValue={'popular'} className="sort-items" onChange={e => setSortBy(e.target.value)}>
@@ -184,7 +189,7 @@ const HomePage = () => {
           </center>
         )}
       </div>
-      {(cookies.thirdparty_ads && showAdScript) && (
+      {cookies.thirdparty_ads && (
         <center id="ab-bottom" className="ab-bottom-section">
           <script src="https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=900"></script>
         </center>

@@ -56,38 +56,32 @@ export default function BlogPostTemplate({
   }
 
   useLayoutEffect(() => {
-    const scriptElementOne = document.createElement('script');
-    const scriptElementTwo = document.createElement('script');
-    const scriptElementThree = document.createElement('script');
-    const scriptElementFour = document.createElement('script');
-    scriptElementOne.src = `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=${indexId}`;
-    scriptElementTwo.src = `https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=${indexId}`;
-    scriptElementThree.src = `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwNDM7c3F1YXJlLnNxdWFyZV9ib3g=&index=${indexId}`;
-    scriptElementFour.src = `https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2OTM7c3F1YXJlLnNxdWFyZV9ib3g=&index=${indexId}`;
-
-    scriptElementOne.async = true;
-    scriptElementTwo.async = true;
-    scriptElementThree.async = true;
-    scriptElementFour.async = true;
-
-    const containerOne = scriptContainerOneRef.current;
-    const containerTwo = scriptContainerTwoRef.current;
-    const containerThree = scriptContainerThreeRef.current;
-    const containerFour = scriptContainerFourRef.current;
-
-    if (containerOne && cookies.thirdparty_ads) {
-      containerOne.appendChild(scriptElementOne);
-    }
-    if (containerTwo && cookies.thirdparty_ads) {
-      containerTwo.appendChild(scriptElementTwo);
-    }
-    if (containerThree && cookies.thirdparty_ads) {
-      containerThree.appendChild(scriptElementThree);
-    }
-    if (containerFour && cookies.thirdparty_ads) {
-      containerFour.appendChild(scriptElementFour);
-    }
+    const scriptSources = [
+      `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=${indexId}`,
+      `https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=${indexId}`,
+      `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwNDM7c3F1YXJlLnNxdWFyZV9ib3g=&index=${indexId}`,
+      `https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2OTM7c3F1YXJlLnNxdWFyZV9ib3g=&index=${indexId}`,
+    ];
+  
+    const scriptContainers = [
+      scriptContainerOneRef.current,
+      scriptContainerTwoRef.current,
+      scriptContainerThreeRef.current,
+      scriptContainerFourRef.current,
+    ];
+  
+    scriptSources.forEach((source, index) => {
+      const scriptElement = document.createElement('script');
+      scriptElement.src = source;
+      scriptElement.async = true;
+  
+      const container = scriptContainers[index];
+      if (container && cookies.thirdparty_ads) {
+        container.appendChild(scriptElement);
+      }
+    });
   }, [scriptContainerOneRef.current, scriptContainerTwoRef.current, scriptContainerThreeRef.current, scriptContainerFourRef.current, cookies.thirdparty_ads]);
+  
   
   const adScriptToInsert = cookies.thirdparty_ads && (indexId !== 0) ?
                               (ReactDOMServer.renderToStaticMarkup(

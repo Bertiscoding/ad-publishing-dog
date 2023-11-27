@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useRef, useLayoutEffect } from "react"
 import { useLocation } from "@reach/router"
 import { graphql } from "gatsby"
 import { useCookies } from "react-cookie"
@@ -10,12 +10,12 @@ import "../styles/style.scss"
 export default function BlogPostTemplate({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+  const { markdownRemark } = data // data.markdownRemark holds post data
   const { frontmatter, html } = markdownRemark
   let featuredImg = frontmatter.featuredImage.publicURL
   const [cookies] = useCookies();
-  const [showAdScript, setShowAdScript] = useState(null);
-  const location = useLocation()
+  const scriptContainerOneRef = useRef();
+  const scriptContainerTwoRef = useRef();
 
   const frameWrapper = {
     display: "flex",
@@ -48,28 +48,24 @@ export default function BlogPostTemplate({
     marginTop: 30,
   }
 
-  const renderAds = (id) => {
-    const timeout = setTimeout(() => {
-      if (id % 2 === 0) {
-        setShowAdScript(<script src={`${location.protocol}//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=${id}`}></script>);
-      } else {
-        setShowAdScript(<script src={`${location.protocol}//servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=${id}`}></script>);
-      }
-    }, 2700);
+  useLayoutEffect(() => {
+    const scriptElementOne = document.createElement('script');
+    const scriptElementTwo = document.createElement('script');
+    scriptElementOne.src = `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=${frontmatter.id}`;
+    scriptElementTwo.src = `https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=${frontmatter.id}`;
+    scriptElementOne.async = true;
+    scriptElementTwo.async = true;
 
-    return () => clearTimeout(timeout);
-  };
+    const containerOne = scriptContainerOneRef.current;
+    const containerTwo = scriptContainerTwoRef.current;
 
-  useEffect(() => {
-    renderAds(frontmatter.id);
-  }, []);
-
-  const renderShowAds = showAdScript ? (
-    // <center id="ab-mid" className="ab-mid-section">
-    <center id="ab-mid">
-      <script src={showAdScript.props.src}></script>
-    </center>
-  ) : null
+    if (containerOne && cookies.thirdparty_ads) {
+      containerOne.appendChild(scriptElementOne);
+    }
+    if (containerTwo && cookies.thirdparty_ads) {
+      containerTwo.appendChild(scriptElementTwo)
+    }
+  }, [scriptContainerOneRef, scriptContainerTwoRef, cookies.thirdparty_ads]);
 
   return (
     <>
@@ -97,7 +93,9 @@ export default function BlogPostTemplate({
               style={featuredImg ? {backgroundImage: `url(${featuredImg})`} : {backgroundColor: '#97A7B3'}}
               className="lp-background-img"
             ></div>
-            {(cookies.thirdparty_ads && frontmatter.id !== 0) && ( renderShowAds )}
+            { cookies.thirdparty_ads && frontmatter.id !== 0 (
+              <center id="ab-mid" className="ab-mid-section" ref={scriptContainerTwoRef}></center>
+            )}
             <div
               dangerouslySetInnerHTML={{ __html: html }}
             />
@@ -110,7 +108,9 @@ export default function BlogPostTemplate({
           </section>
         )}
       </div>
-      {(cookies.thirdparty_ads && frontmatter.id !== 0) && ( renderShowAds )}
+      { cookies.thirdparty_ads && frontmatter.id !== 0 (
+        <center id="ab-mid" className="ab-mid-section" ref={scriptContainerOneRef}></center>
+      )}
       <Footer />
     </>
   )

@@ -33,7 +33,7 @@ Dobermans are social dogs, requiring early socialization. Expose your puppy to v
 
 Tap into the intelligence of Doberman Pinschers through obedience training. Consider enrolling in a basic obedience class or working with a professional trainer. Positive reinforcement techniques, such as clicker training, are highly effective. Focus on rewarding good behavior rather than punishing bad behavior. Dobermans thrive on positive attention and quickly learn what earns them rewards.
 
-## Channeling Energy: Mental and Physical Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Given their high energy levels, provide both mental and physical exercise. Regular walks, engaging play sessions, and puzzle toys help burn off excess energy. Activities like agility and interactive toys that stimulate their minds are beneficial. A well-exercised Doberman is more likely to exhibit good behavior.
 

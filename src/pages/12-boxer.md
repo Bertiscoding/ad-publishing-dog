@@ -33,7 +33,7 @@ Boxers are social dogs, requiring early socialization. Expose your puppy to vari
 
 Harness the intelligence of Boxers through obedience training. Enroll in a basic obedience class or work with a professional trainer. Positive reinforcement, such as clicker training, is highly effective. Focus on rewarding good behavior rather than punishing bad behavior. Boxers thrive on positive attention and quickly grasp what earns them rewards.
 
-## Channeling Energy: Mental and Physical Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Given their high energy levels, provide mental and physical exercise. Regular walks, engaging play sessions, and puzzle toys help burn excess energy. Activities like agility and fetch tap into their natural instincts. A well-exercised Boxer is more likely to exhibit good behavior.
 

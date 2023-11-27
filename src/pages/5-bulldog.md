@@ -33,7 +33,7 @@ Early socialization ensures a well-mannered and confident Bulldog. Introduce the
 
 Despite their independent streak, Bulldogs are eager to please. Use positive reinforcement and consider professional training for reliable obedience commands.
 
-## Channeling Energy: Playful Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Bulldogs love play; incorporate it into training. Use interactive toys, short walks, and games to burn excess energy. Be mindful of their size and avoid strenuous activities.
 

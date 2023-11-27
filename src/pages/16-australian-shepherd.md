@@ -33,7 +33,7 @@ Australian Shepherds are social dogs, requiring early socialization. Expose your
 
 Tap into the intelligence of Australian Shepherds through obedience training. Enroll in a basic obedience class or work with a professional trainer. Positive reinforcement techniques, such as clicker training, are highly effective. Focus on rewarding good behavior rather than punishing bad behavior. Aussies thrive on positive attention and quickly learn what earns them rewards.
 
-## Channeling Energy: Mental and Physical Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Given their high energy levels, provide both mental and physical exercise. Regular walks, engaging play sessions, and puzzle toys help burn off excess energy. Activities like agility and interactive toys that stimulate their minds are beneficial. A well-exercised Australian Shepherd is more likely to exhibit good behavior.
 

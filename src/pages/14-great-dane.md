@@ -33,7 +33,7 @@ Great Danes are social dogs, requiring early socialization. Expose your puppy to
 
 Tap into the intelligence of Great Danes through obedience training. Consider enrolling in a basic obedience class or working with a professional trainer. Positive reinforcement techniques, such as clicker training, are highly effective. Focus on rewarding good behavior rather than punishing bad behavior. Great Danes thrive on positive attention and quickly learn what earns them rewards.
 
-## Channeling Energy: Mental and Physical Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Given their moderate energy levels, provide both mental and physical exercise. Regular walks, engaging play sessions, and puzzle toys help burn off excess energy. Activities like agility and interactive toys that stimulate their minds are beneficial. A well-exercised Great Dane is more likely to exhibit good behavior.
 

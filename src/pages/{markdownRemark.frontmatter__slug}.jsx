@@ -14,9 +14,14 @@ export default function BlogPostTemplate({
   const { frontmatter, html } = markdownRemark
   let featuredImg = frontmatter.featuredImage.publicURL
   const [cookies] = useCookies();
+  const indexId = frontmatter.id
+  const getMidMarker = html.indexOf('<h2>Channeling Energy: Physical and Mental Exercise</h2>');
+  const beforeAdScript = html.slice(0, getMidMarker);
+  const afterAdScript = html.slice(getMidMarker);
   const scriptContainerOneRef = useRef();
   const scriptContainerTwoRef = useRef();
-  const indexId = frontmatter.id
+  const scriptContainerThreeRef = useRef();
+  const scriptContainerFourRef = useRef();
 
   const frameWrapper = {
     display: "flex",
@@ -52,13 +57,22 @@ export default function BlogPostTemplate({
   useLayoutEffect(() => {
     const scriptElementOne = document.createElement('script');
     const scriptElementTwo = document.createElement('script');
+    const scriptElementThree = document.createElement('script');
+    const scriptElementFour = document.createElement('script');
     scriptElementOne.src = `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=${indexId}`;
     scriptElementTwo.src = `https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=${indexId}`;
+    scriptElementThree.src = `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwNDM7c3F1YXJlLnNxdWFyZV9ib3g=&index=${indexId}`;
+    scriptElementFour.src = `https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2OTM7c3F1YXJlLnNxdWFyZV9ib3g=&index=${indexId}`;
+
     scriptElementOne.async = true;
     scriptElementTwo.async = true;
+    scriptElementThree.async = true;
+    scriptElementFour.async = true;
 
     const containerOne = scriptContainerOneRef.current;
     const containerTwo = scriptContainerTwoRef.current;
+    const containerThree = scriptContainerThreeRef.current;
+    const containerFour = scriptContainerFourRef.current;
 
     if (containerOne && cookies.thirdparty_ads) {
       containerOne.appendChild(scriptElementOne);
@@ -66,17 +80,19 @@ export default function BlogPostTemplate({
     if (containerTwo && cookies.thirdparty_ads) {
       containerTwo.appendChild(scriptElementTwo)
     }
-  }, [scriptContainerOneRef, scriptContainerTwoRef, cookies.thirdparty_ads]);
+    if (containerThree && cookies.thirdparty_ads) {
+      containerThree.appendChild(scriptElementThree)
+    }
+    if (containerFour && cookies.thirdparty_ads) {
+      containerFour.appendChild(scriptElementFour)
+    }
+  }, [scriptContainerOneRef, scriptContainerTwoRef, scriptContainerThreeRef, scriptContainerFourRef, cookies.thirdparty_ads]);
+
+  const adScriptToInsert = cookies.thirdparty_ads && (indexId !== 0) ? `<center id="ab-bottom" className="ab-bottom-section" ref=${scriptContainerFourRef}></center>` : null;
 
   return (
     <>
       <Header />
-      {(cookies.thirdparty_ads && (indexId !== 0)) && (
-        // <center id="ab-top" className="ab-top-section">
-        <center id="ab-top">
-          <div id="ezoic-pub-ad-placeholder-103"> </div>
-        </center>
-      )}
       <div className="page-container-wrapper">
         {(cookies.thirdparty_ads && (indexId !== 0)) && (
           // <section id="ab-left" className="ab-left-section">
@@ -86,6 +102,9 @@ export default function BlogPostTemplate({
         )}
         <div style={frameWrapper} className="page-container">
           <div style={frame}>
+            {(cookies.thirdparty_ads && (indexId !== 0)) && (
+              <center id="ab-mid" className="ab-mid-section" ref={scriptContainerThreeRef}></center>
+            )}
             <h1 style={headingH1}>{frontmatter.title}</h1>
             <h3 style={summaryStyle}>{frontmatter.summary}</h3>
             <p style={dateStyle}>{frontmatter.date}</p>
@@ -97,10 +116,7 @@ export default function BlogPostTemplate({
             {(cookies.thirdparty_ads && (indexId !== 0)) && (
               <center id="ab-mid" className="ab-mid-section" ref={scriptContainerTwoRef}></center>
             )}
-            <div
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
-          </div>
+            <div dangerouslySetInnerHTML={{ __html: beforeAdScript + adScriptToInsert + afterAdScript }} /></div>
         </div>
         {(cookies.thirdparty_ads && (indexId !== 0)) && (
           // <section id="ab-right" className="ab-right-section">
@@ -110,7 +126,7 @@ export default function BlogPostTemplate({
         )}
       </div>
       {(cookies.thirdparty_ads && (indexId !== 0)) && (
-        <center id="ab-mid" className="ab-mid-section" ref={scriptContainerOneRef}></center>
+        <center id="ab-bottom" className="ab-bottom-section" ref={scriptContainerOneRef}></center>
       )}
       <Footer />
     </>

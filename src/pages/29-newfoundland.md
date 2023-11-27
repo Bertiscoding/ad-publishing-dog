@@ -33,7 +33,7 @@ Expose your Newfoundland to various environments, people, and other pets early o
 
 Advance to more complex obedience commands as your Newfoundland matures. Commands like 'leave it' and 'wait' enhance safety and control. Consistent, varied training sessions cater to their intelligent nature, keeping them stimulated and responsive.
 
-## Channeling Energy Through Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Despite their gentle nature, Newfoundlands benefit from regular exercise. Incorporate daily activities like leisurely walks and swimming sessions. While they may not be as energetic as smaller breeds, exercise contributes to a healthy and content Newfoundland.
 

@@ -29,7 +29,7 @@ Havanese dogs are sociable by nature, but proper socialization is still crucial.
 
 Move beyond basic commands to establish good manners. Teach your Havanese to wait patiently, not to jump on people, and to greet guests politely. Consistent reinforcement of these behaviors will result in a well-behaved and enjoyable furry family member.
 
-## Channeling Energy Through Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Havanese dogs may be small, but they are bundles of energy. Regular exercise is crucial for their physical and mental well-being. Engage in activities like interactive play, short walks, and even agility training. A tired Havanese is a well-behaved Havanese.
 

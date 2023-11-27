@@ -33,7 +33,7 @@ Cocker Spaniels thrive on social interactions. Expose them to various people, en
 
 As your Cocker Spaniel matures, advance to more complex obedience commands like 'leave it' and 'wait.' This not only enhances your control over them but also provides mental stimulation. Keep training sessions varied and interesting to prevent boredom.
 
-## Channeling Energy Through Exercise
+## Channeling Energy: Physical and Mental Exercise
 
 Cocker Spaniels have high energy levels, requiring regular exercise. Incorporate daily walks, play sessions, and activities like fetch to channel their energy positively. A tired Cocker Spaniel is more likely to be attentive and receptive during training, making sessions more effective.
 

@@ -16,6 +16,7 @@ export default function BlogPostTemplate({
   const [cookies] = useCookies();
   const scriptContainerOneRef = useRef();
   const scriptContainerTwoRef = useRef();
+  const indexId = frontmatter.id
 
   const frameWrapper = {
     display: "flex",
@@ -51,8 +52,8 @@ export default function BlogPostTemplate({
   useLayoutEffect(() => {
     const scriptElementOne = document.createElement('script');
     const scriptElementTwo = document.createElement('script');
-    scriptElementOne.src = `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=${frontmatter.id}`;
-    scriptElementTwo.src = `https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=${frontmatter.id}`;
+    scriptElementOne.src = `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=${indexId}`;
+    scriptElementTwo.src = `https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=${indexId}`;
     scriptElementOne.async = true;
     scriptElementTwo.async = true;
 
@@ -70,14 +71,14 @@ export default function BlogPostTemplate({
   return (
     <>
       <Header />
-      {(cookies.thirdparty_ads && frontmatter.id !== 0) && (
+      {(cookies.thirdparty_ads && (indexId !== 0)) && (
         // <center id="ab-top" className="ab-top-section">
         <center id="ab-top">
           <div id="ezoic-pub-ad-placeholder-103"> </div>
         </center>
       )}
       <div className="page-container-wrapper">
-        {(cookies.thirdparty_ads && frontmatter.id !== 0) && (
+        {(cookies.thirdparty_ads && (indexId !== 0)) && (
           // <section id="ab-left" className="ab-left-section">
           <section id="ab-left">
             <div id="ezoic-pub-ad-placeholder-106"> </div>
@@ -93,7 +94,7 @@ export default function BlogPostTemplate({
               style={featuredImg ? {backgroundImage: `url(${featuredImg})`} : {backgroundColor: '#97A7B3'}}
               className="lp-background-img"
             ></div>
-            { cookies.thirdparty_ads && frontmatter.id !== 0 (
+            {(cookies.thirdparty_ads && (indexId !== 0)) && (
               <center id="ab-mid" className="ab-mid-section" ref={scriptContainerTwoRef}></center>
             )}
             <div
@@ -101,14 +102,14 @@ export default function BlogPostTemplate({
             />
           </div>
         </div>
-        {(cookies.thirdparty_ads && frontmatter.id !== 0) && (
+        {(cookies.thirdparty_ads && (indexId !== 0)) && (
           // <section id="ab-right" className="ab-right-section">
           <section id="ab-right">
             <div id="ezoic-pub-ad-placeholder-107"> </div>
           </section>
         )}
       </div>
-      { cookies.thirdparty_ads && frontmatter.id !== 0 (
+      {(cookies.thirdparty_ads && (indexId !== 0)) && (
         <center id="ab-mid" className="ab-mid-section" ref={scriptContainerOneRef}></center>
       )}
       <Footer />

@@ -15,6 +15,7 @@ export default function BlogPostTemplate({
   let featuredImg = frontmatter.featuredImage.publicURL
   const [cookies] = useCookies();
   const [showAdScript, setShowAdScript] = useState(null);
+  const location = useLocation()
 
   const frameWrapper = {
     display: "flex",
@@ -50,9 +51,9 @@ export default function BlogPostTemplate({
   const renderAds = (id) => {
     const timeout = setTimeout(() => {
       if (id % 2 === 0) {
-        setShowAdScript(<script src={`https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=${id}`}></script>);
+        setShowAdScript(<script src={`${location.protocol}//servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=${id}`}></script>);
       } else {
-        setShowAdScript(<script src={`https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=${id}`}></script>);
+        setShowAdScript(<script src={`${location.protocol}//servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=${id}`}></script>);
       }
     }, 2700);
 
@@ -66,7 +67,7 @@ export default function BlogPostTemplate({
   const renderShowAds = showAdScript ? (
     // <center id="ab-mid" className="ab-mid-section">
     <center id="ab-mid">
-      {showAdScript}
+      <script src={showAdScript.props.src}></script>
     </center>
   ) : null
 

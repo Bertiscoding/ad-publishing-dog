@@ -55,39 +55,28 @@ export default function BlogPostTemplate({
     marginTop: 30,
   }
 
+  const scriptContainers = [
+    { id: 1, ref: scriptContainerOneRef, source: `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=${indexId}` },
+    { id: 2, ref: scriptContainerTwoRef, source: `https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=${indexId}` },
+    { id: 3, ref: scriptContainerThreeRef, source: `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwNDM7c3F1YXJlLnNxdWFyZV9ib3g=&index=${indexId}` },
+    { id: 4, ref: scriptContainerFourRef, source: `https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2OTM7c3F1YXJlLnNxdWFyZV9ib3g=&index=${indexId}` },
+  ];
+
   useLayoutEffect(() => {
-    const scriptSources = [
-      `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwMjE7c3F1YXJlLnNxdWFyZV9ib3g=&index=${indexId}`,
-      `https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2NTM7c3F1YXJlLm1lZGl1bV9yZWN0YW5nbGU=&index=${indexId}`,
-      `https://servedby.studads.com/ads/ads.php?t=MTk0Mzg7MTMwNDM7c3F1YXJlLnNxdWFyZV9ib3g=&index=${indexId}`,
-      `https://servedby.eleavers.com/ads/ads.php?t=MjkyOTk7MTk2OTM7c3F1YXJlLnNxdWFyZV9ib3g=&index=${indexId}`,
-    ];
-  
-    const scriptContainers = [
-      scriptContainerOneRef.current,
-      scriptContainerTwoRef.current,
-      scriptContainerThreeRef.current,
-      scriptContainerFourRef.current,
-    ];
-  
-    scriptSources.forEach((source, index) => {
+    scriptContainers.forEach(({ ref, source }) => {
       const scriptElement = document.createElement('script');
       scriptElement.src = source;
       scriptElement.async = true;
   
-      const container = scriptContainers[index];
-      if (container && cookies.thirdparty_ads) {
-        container.appendChild(scriptElement);
+      if (ref.current && cookies.thirdparty_ads) {
+        ref.current.appendChild(scriptElement);
       }
     });
-  }, [scriptContainerOneRef.current, scriptContainerTwoRef.current, scriptContainerThreeRef.current, scriptContainerFourRef.current, cookies.thirdparty_ads]);
-  
-  
-  const adScriptToInsert = cookies.thirdparty_ads && (indexId !== 0) ?
-                              (ReactDOMServer.renderToStaticMarkup(
-                                <center id="ab-bottom" className="ab-bottom-section" ref={scriptContainerFourRef}></center>
-                              ))
-                            : null
+  }, [scriptContainerOneRef, scriptContainerTwoRef, scriptContainerThreeRef, scriptContainerFourRef, cookies.thirdparty_ads]);
+
+  const adScriptToInsert = ReactDOMServer.renderToStaticMarkup(
+    <center id="ab-bottom" className="ab-bottom-section" ref={scriptContainerFourRef}></center>
+  );
 
   return (
     <>

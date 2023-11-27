@@ -15,6 +15,9 @@ export default function BlogPostTemplate({
   let featuredImg = frontmatter.featuredImage.publicURL
   const [cookies] = useCookies();
   const indexId = frontmatter.id
+  const getMidMarker = html.indexOf('<h2>Channeling Energy: Physical and Mental Exercise</h2>');
+  const beforeAdScript = html.slice(0, getMidMarker);
+  const afterAdScript = html.slice(getMidMarker);
   const scriptContainerOneRef = useRef();
   const scriptContainerTwoRef = useRef();
   const scriptContainerThreeRef = useRef();
@@ -85,6 +88,8 @@ export default function BlogPostTemplate({
     }
   }, [scriptContainerOneRef, scriptContainerTwoRef, scriptContainerThreeRef, scriptContainerFourRef, cookies.thirdparty_ads]);
 
+  const adScriptToInsert = cookies.thirdparty_ads && (indexId !== 0) ? `<center id="ab-bottom" className="ab-bottom-section" ref=${scriptContainerFourRef}></center>` : null;
+
   return (
     <>
       <Header />
@@ -111,10 +116,7 @@ export default function BlogPostTemplate({
             {(cookies.thirdparty_ads && (indexId !== 0)) && (
               <center id="ab-mid" className="ab-mid-section" ref={scriptContainerTwoRef}></center>
             )}
-            <div
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
-          </div>
+            <div dangerouslySetInnerHTML={{ __html: beforeAdScript + adScriptToInsert + afterAdScript }} /></div>
         </div>
         {(cookies.thirdparty_ads && (indexId !== 0)) && (
           // <section id="ab-right" className="ab-right-section">
@@ -125,9 +127,6 @@ export default function BlogPostTemplate({
       </div>
       {(cookies.thirdparty_ads && (indexId !== 0)) && (
         <center id="ab-bottom" className="ab-bottom-section" ref={scriptContainerOneRef}></center>
-      )}
-      {(cookies.thirdparty_ads && (indexId !== 0)) && (
-        <center id="ab-bottom" className="ab-bottom-section" ref={scriptContainerFourRef}></center>
       )}
       <Footer />
     </>
